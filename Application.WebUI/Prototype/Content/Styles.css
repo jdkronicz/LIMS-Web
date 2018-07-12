@@ -1,0 +1,31 @@
+body {background:#006699;font-family: Arial, Helvetica, sans-serif;}
+
+.ReportTitle {color:#FFFF00;font-size:18pt;font-weight:bold;font-style:italics;}
+.ReportColumn {width:800px;background-color:#EEEEEE;text-align:center;vertical-align:top;}
+.ReportGroup {cursor:default;width:95%;text-align:left;vertical-align:bottom;border-collapse:collapse;
+              background-color:#CCDAE1;border: 1px solid #000066;
+              font-weight:bold;font-size:11pt;color:#000066;}
+.ReportGroup td {padding-left:5px;padding-right:3px;}
+.NoData {color:#FF0000;text-align:right;}
+.Error {color:#FF0000;text-align:center;font-weight:bold;}
+
+.ReportData {width:95%;text-align:left;vertical-align:top;}
+.ReportKey {color:#000066;font-weight:bold;font-size:10pt;text-align:right;vertical-align:top;}
+.ReportValue {color:#000066;font-style:italic;font-size:9pt;}
+
+.ReportSubTable {border-collapse:collapse;width:90%;margin-left:40px;}
+.ReportSubTable tr{padding:2px;border: 1px solid #000066;color:#000066;font-weight:bold;font-size:10pt;text-align:center;vertical-align:bottom;}
+.ReportSubTable td{padding:2px;border: 1px solid #000066;color:#000066;font-style:italic;font-size:9pt;text-align:left;vertical-align:top;}
+
+.ButtonSmLong {background:url(/ce/Application/Images/buttonSm125.gif);width:125px;height:18px;border:0px transparent #006699;font-weight:bold;color:#000000;}
+.ButtonSm {background:url(/ce/Application/Images/buttonSm100.gif);width:100px;height:18px;border:0px transparent #006699;font-weight:bold;color:#000000;}
+.ButtonSmShort {background:url(/ce/Application/Images/buttonSm075.gif);width:75px;height:18px;border:0px transparent #006699;font-weight:bold;color:#000000;}
+.ButtonSmXL {background:url(/ce/Application/Images/buttonSm150.gif);width:150px;height:18px;border:0px transparent #006699;font-weight:bold;color:#000000;}
+
+.ButtonSmLongOn {background:url(/ce/Application/Images/buttonSmY125.gif);width:125px;height:18px;border:0px transparent #006699;font-weight:bold;color:#000000;}
+.ButtonSmOn {background:url(/ce/Application/Images/buttonSmY100.gif);width:100px;height:18px;border:0px transparent #006699;font-weight:bold;color:#000000;}
+.ButtonSmShortOn {background:url(/ce/Application/Images/buttonSmY75.gif);width:75px;height:18px;border:0px transparent #006699;font-weight:bold;color:#000000;}
+
+.ButtonSmLongAct {background:url(/ce/Application/Images/buttonSmOr125.gif);width:125px;height:18px;border:0px transparent #006699;font-weight:bold;color:#000000;}
+.ButtonSmAct {background:url(/ce/Application/Images/buttonSmOr100.gif);width:100px;height:18px;border:0px transparent #006699;font-weight:bold;color:#000000;}
+.ButtonSmShortAct {background:url(/ce/images/buttonSmOr075.gif);width:75px;height:18px;border:0px transparent #006699;font-weight:bold;color:#000000;}

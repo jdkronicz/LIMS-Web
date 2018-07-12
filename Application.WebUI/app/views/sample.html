@@ -1,0 +1,299 @@
+﻿
+<div class="main-content">
+    <div class="breadcrumbs" id="breadcrumbs">
+
+        <div>
+
+            <h2>
+                <p style="text-align: center; vertical-align: middle;"><span class="blue"><b>Sample Query Tool</b></span></p>
+            </h2>
+
+
+        </div>
+
+        <!-- /.nav-search -->
+    </div>
+
+    <div class="page-content">
+
+        <div class="page-content-area">
+
+
+            <div class="row">
+                <div class="col-xs-12">
+                    <div class="container-fluid">
+
+
+                        <div class="contentpanel">
+
+
+                            <!-- Main row -->
+                            <div class="row">
+                                <div class="col-xs-12">
+                                    <div class="container-fluid">
+                                        <div class="col-md-12">
+                                            <div class="widget widget-green">
+                                                <div class="widget-title">
+
+                                                    <h3><i class="fa fa-search"></i>Sample Filter</h3>
+                                                </div>
+                                                <div class="widget-content">
+                                                    <div class="container-fluid">
+
+
+                                                        <form class="form-horizontal">
+
+
+                                                            <div class="form-group">
+                                                                <label class=" col-md-2 control-label">Report Number :</label>
+                                                                <div class="col-md-2">
+                                                                    <input type="text" class="form-control" data-ng-model="vm.searchSample.reportNumber">
+                                                                </div>
+                                                                <label class="control-label col-md-2">Product :</label>
+                                                                <div class="col-md-2">
+                                                                    <input type="text" class="form-control" data-ng-model="vm.searchSample.product">
+                                                                </div>
+
+                                                            </div>
+
+
+
+
+                                                            <div class="form-group">
+                                                                <label class="control-label col-md-2">Lot/Sub Lot No. :</label>
+                                                                <div class="col-md-2">
+                                                                    <input type="text" class="form-control" data-ng-model="vm.searchSample.subLotNumber">
+                                                                </div>
+                                                                <label class="control-label col-md-2">Receipt Date From :</label>
+                                                                <div class="col-md-3">
+                                                                    <div class="input-daterange input-group date">
+                                                                        <input type="text" class="input-sm form-control" name="start" data-ng-model="vm.searchSample.receiptfromDT">
+                                                                        <span class="input-group-addon">
+                                                                            To
+                                                                        </span>
+
+                                                                        <input type="text" class="input-sm form-control" name="end" data-ng-model="vm.searchSample.receipttoDT">
+                                                                    </div>
+                                                                </div>
+
+                                                                <div class="col-md-offset-7 clearfix">
+
+                                                                    <button type="submit" class="btn btn-success" ng-click="vm.apply()">
+                                                                        <i class="fa fa-filter" aria-hidden="true"></i> Apply
+                                                                    </button>
+
+                                                                    <button type="button" class="btn btn-danger" ng-click="vm.reset()">
+                                                                        <i class="fa fa-refresh" aria-hidden="true"></i> Reset
+                                                                    </button>
+
+                                                                </div>
+                                                            </div>
+
+
+                                                        </form>
+
+                                                    </div>
+                                                </div>
+                                            </div>
+
+
+                                        </div>
+
+
+                                    </div>
+                                </div>
+                            </div>
+
+
+
+
+
+                            <div class="row">
+                                <div class="col-xs-12">
+                                    <div class="container-fluid">
+
+
+                                        <div class="widget widget-green">
+                                            <div class="widget-title clearfix">
+
+                                                <h3><i class="fa fa-table"></i>Sample Results</h3>
+
+
+
+
+
+                                                <div class=" pull-right clearfix">
+
+                                                   
+                                                    <label> <select name="dynamic-table_length" data-ng-model="vm.pageSize" data-ng-change="vm.search()" class="form-control input-sm" aria-controls="dynamic-table"><option value="10">10</option><option value="25">25</option><option value="50">50</option><option value="100">100</option></select> </label>
+                                                </div>
+                                            </div>
+                                            <div class="widget-content">
+
+                                                <div class="table-responsive">
+                                                    <table class="table table-bordered table-hover">
+                                                        <thead>
+                                                            <tr>
+                                                                <th style="width: 5%" class="hidden-print">
+                                                                    <a class="toggle5" data-rel="tooltip" title="Expand All" href ng-click="vm.expandAll(allExpanded = !allExpanded)" data-ng-hide="vm.samples.length == 0">
+                                                                        <span class="green">
+                                                                            <i ng-class="allExpanded ? 'ace-icon fa fa-minus-square bigger-120' : 'ace-icon fa fa-plus-square bigger-120'"></i>
+                                                                        </span>
+
+                                                                    </a>
+                                                                </th>
+                                                                <th>CSL No.</th>
+                                                                <th>Receipt Date</th>
+                                                                <th>Product</th>
+                                                                <th>Lot No.</th>
+                                                                <th>Sub Lot No.</th>
+
+                                                                <th>Work Order No.</th>
+
+                                                            </tr>
+                                                        </thead>
+                                                        <tbody>
+                                                            <tr data-ng-hide="vm.samples.length > 0" class="error">
+                                                                <td colspan="7">
+                                                                   
+                                                                    <div class="text-center"><strong>No samples found</strong></div>
+                                                                </td>
+                                                            </tr>
+                                                            <tr ng-repeat-start="sample in vm.samples">
+                                                                <td>
+                                                                    <a class="toggle5" data-rel="tooltip" title="Expand/Collapse" href ng-click="expanded = !expanded" expand>
+                                                                        <span class="green">
+                                                                            <i ng-class="expanded ? 'ace-icon fa fa-minus-square bigger-120' : 'ace-icon fa fa-plus-square bigger-120'"></i>
+                                                                        </span>
+                                                                    </a>
+                                                                </td>
+                                                                <td>{{sample.sampNum}}</td>
+                                                                <td>{{sample.workOrder.receiptDate| date:'MM-dd-yyyy'}}</td>
+
+                                                                <td>{{sample.product.prodName}}</td>
+                                                                <td class="hidden-480">
+                                                                    {{sample.lotNum}}
+                                                                </td>
+                                                                <td>{{sample.subLotNum}}</td>
+
+                                                                <td>{{sample.workOrder.wO_Num}}</td>
+
+                                                            </tr>
+
+
+                                                            <tr ng-repeat-end ng-show="expanded">
+                                                                <td></td>
+                                                                <td colspan="6">
+                                                                    <table id="Table16" class="table table-striped table-bordered table-hover">
+                                                                        <thead>
+                                                                            <tr>
+                                                                                <th>
+                                                                                </th>
+                                                                                <th>
+                                                                                    Report No.
+                                                                                </th>
+
+                                                                                <th>
+                                                                                    Number of Parameters
+                                                                                </th>
+                                                                                <th>
+                                                                                </th>
+                                                                            </tr>
+                                                                        </thead>
+                                                                        <tbody>
+                                                                            <tr ng-repeat-start="report in sample.reportnews">
+                                                                                <td>
+                                                                                    <a class="toggle5" data-rel="tooltip" title="Expand/Collapse" href ng-click="expanded1 = !expanded1" expand1>
+                                                                                        <span class="green">
+                                                                                            <i ng-class="expanded1 ? 'ace-icon fa fa-minus-square' : 'ace-icon fa fa-plus-square'"></i>
+                                                                                        </span>
+                                                                                    </a>
+                                                                                </td>
+                                                                                <td>
+                                                                                    {{report.reportNum}}
+                                                                                </td>
+
+                                                                                <td>{{report.repResults.length}}</td>
+                                                                                <td>
+                                                                                    <div class="hidden-sm hidden-xs btn-group">
+
+
+                                                                                        <button class="btn btn-xs btn-success"  ng-click="vm.download(report)">
+                                                                                            <i class="ace-icon fa fa-download  bigger-120"></i>Download
+                                                                                        </button>
+
+
+
+                                                                                    </div>
+
+
+                                                                                </td>
+                                                                            </tr>
+
+                                                                            <tr ng-repeat-end ng-show="expanded1">
+                                                                                <td></td>
+                                                                                <td colspan="4">
+                                                                                    <table id="Table1" class="table table-striped table-bordered table-hover">
+                                                                                        <thead>
+                                                                                            <tr>
+
+                                                                                                <th>
+                                                                                                    Parameter Name
+                                                                                                </th>
+
+                                                                                            </tr>
+                                                                                        </thead>
+                                                                                        <tbody>
+                                                                                            <tr ng-repeat="result in report.repResults">
+
+                                                                                                <td>
+                                                                                                    {{result.methPara.para.paraShort}}
+                                                                                                </td>
+
+                                                                                            </tr>
+
+                                                                                        </tbody>
+                                                                                    </table>
+                                                                                </td>
+                                                                            </tr>
+
+                                                                        </tbody>
+                                                                    </table>
+                                                                </td>
+                                                            </tr>
+
+                                                        </tbody>
+                                                    </table>
+                                                </div>
+                                                <div class="row" data-ng-hide="vm.samples.length == 0"><div class="col-xs-6">
+                                                    <div class="dataTables_info" id="dynamic-table_info" role="status" aria-live="polite"> Showing {{vm.StartsRecods}} to {{vm.EndRecord}} of {{vm.totalRecords}} entries
+</div></div>
+                                                <div class="col-xs-6">
+                                                    <div class="dataTables_paginate paging_simple_numbers" id="dynamic-table_paginate">
+                                                        <pagination total-items="vm.totalRecords" ng-model="vm.currentPage" ng-change="vm.pageChanged()" max-size="10" class="pagination-sm" boundary-links="true" rotate="false" items-per-page="vm.pageSize"></pagination>
+
+                                                    </div></div></div>
+                                              
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+
+                        </div>
+
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <!-- /.page-header -->
+
+
+    </div>
+    <!-- /.page-content-area -->
+
+</div>

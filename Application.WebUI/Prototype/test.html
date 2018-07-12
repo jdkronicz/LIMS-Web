@@ -1,0 +1,120 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <title>Get multiple selected option value</title>
+
+  <meta http-equiv="content-type" content="application/xhtml+xml; charset=utf-8" />
+  <meta name="robots" content="index, follow" />
+  <meta name="description" content="Default description goes here" />
+  <meta name="keywords" content="default, keywords, here" />
+  <meta name="author" content="Author Name" />
+
+  <link rel="favourites icon" href="/public/themes/wolf/images/favicon.ico" />
+    <link rel="stylesheet" href="/public/themes/simple/screen_new.css" media="screen" type="text/css" />
+    <link rel="stylesheet" href="/public/themes/simple/print.css" media="print" type="text/css" />
+    <link rel="alternate" type="application/rss+xml" title="Wolf Default RSS Feed" href="http://demo.innovsystems.com/rss.xml" />
+
+</head>
+<body>
+<div id="page">
+<div id="header">
+  <h1><a href="http://demo.innovsystems.com/" id="logo">Innovsystems</a></h1>
+  <div id="nav">
+    <ul>
+      <li><a href="http://demo.innovsystems.com/">Home</a></li>
+      <li><a href="http://demo.innovsystems.com/jquery.html"  class="current">jQuery</a></li>
+      <li><a href="http://demo.innovsystems.com/javascript.html" >Javascript</a></li>
+ 
+    </ul>
+  </div> <!-- end #navigation -->
+</div> <!-- end #header --><div id="content">
+
+  <h2>Get multiple selected option value</h2>
+  <h2>Method 1</h2>
+<form method="post" action="">
+    <select id="multi-selectbox1" multiple="multiple" name="select_list1">
+      <option value="val1">option 1</option>
+      <option value="val2">option 2</option>
+      <option value="val3">option 3</option>
+	  <option value="val4">option 4</option>
+	</select>
+</form>
+<script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
+<script type="text/javascript">
+<!--
+    $(document).ready(function () {
+        $('#multi-selectbox1').change(function () {
+            alert($('#multi-selectbox1').val());
+        });
+    });
+    //-->
+</script>
+<br />
+<h2>Method 2</h2>
+
+<form method="post" action="">
+    <select id="multi-selectbox2" multiple="multiple" name="select_list2">
+      <option value="val1">option 1</option>
+      <option value="val2">option 2</option>
+	  <option value="val3">option 3</option>
+	  <option value="val4">option 4</option>
+	</select>
+</form>
+<script type="text/javascript">
+<!--
+    $(document).ready(function () {
+        $('#multi-selectbox2').change(function () {
+
+
+            var option = $(this).find('option:selected').val();
+           
+                alert(option);
+           
+        });
+    });
+    //-->
+</script>
+<br />
+<div><a href="http://blog.innovsystems.com/jquery/jquery-get-multiple-selected-option-value" class="web-button">View code</a></div> 
+   
+
+</div> <!-- end #content -->
+<div id="sidebar">
+
+   
+		<!-- Column 3 start = right/secondary nav sidebar -->
+
+<!-- THIS CONDITIONAL NAVIGATION COULD GO INTO A SNIPPET / START -->
+
+<h2>jQuery Menu</h2>
+<ul>
+    <li><a href="http://demo.innovsystems.com/jquery/horizontal-tab.html" >Horizontal Tab</a></li>
+    <li><a href="http://demo.innovsystems.com/jquery/add-odd-even-class-for-table-rows.html" >Add odd even class for table rows</a></li>
+    <li><a href="http://demo.innovsystems.com/jquery/multi-level-drop-down-menu.html" >Multi level drop down menu</a></li>
+    <li><a href="http://demo.innovsystems.com/jquery/remove-special-characters.html" >Remove special characters</a></li>
+    <li><a href="http://demo.innovsystems.com/jquery/get-multiple-selected-option-value.html"  class="current">Get multiple selected option value</a></li>
+</ul>
+<!-- CONDITIONAL NAVIGATION / END -->
+
+</div> <!-- end #sidebar -->
+<div id="footer"><div id="footer-inner">
+  <p>&copy; Copyright 2014 <a href="http://www.innovsystems.com/" title="Innovsystems">Innovsystems</a><br />
+  </p>
+</div></div><!-- end #footer -->
+<script type="text/javascript">
+
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-25395213-1']);
+    _gaq.push(['_setDomainName', 'innovsystems.com']);
+    _gaq.push(['_trackPageview']);
+
+    (function () {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+
+</script></div> <!-- end #page -->
+</body>
+</html>

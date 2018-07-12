@@ -1,0 +1,739 @@
+<!DOCTYPE html>
+<!-- saved from url=(0052)http://iarouse.com/dist-slim/v1/index.html#/ui/boxes -->
+<html class="no-js"><!--<![endif]--><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><style type="text/css">@charset "UTF-8";[ng\:cloak],[ng-cloak],[data-ng-cloak],[x-ng-cloak],.ng-cloak,.x-ng-cloak,.ng-hide{display:none !important;}ng\:form{display:block;}.ng-animate-block-transitions{transition:0s all!important;-webkit-transition:0s all!important;}.ng-hide-add-active,.ng-hide-remove{display:block!important;}</style>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title>Web Application</title>
+        <meta name="description" content="Responsive Admin Web App">
+        <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1">
+
+        <style>.file-input-wrapper { overflow: hidden; position: relative; cursor: pointer; z-index: 1; }.file-input-wrapper input[type=file], .file-input-wrapper input[type=file]:focus, .file-input-wrapper input[type=file]:hover { position: absolute; top: 0; left: 0; cursor: pointer; opacity: 0; filter: alpha(opacity=0); z-index: 99; outline: 0; }.file-input-name { margin-left: 8px; }</style><link href="./Web Application_files/css" rel="stylesheet" type="text/css">
+        <!-- Needs images, font... therefore can not be part of main.css -->
+        <link rel="stylesheet" href="http://iarouse.com/dist-slim/v1/fonts/themify-icons/themify-icons.min.css">
+        <link rel="stylesheet" href="http://iarouse.com/dist-slim/v1/fonts/weather-icons/css/weather-icons.min.css">
+        <!-- end Needs images -->
+
+            
+            <link rel="stylesheet" href="http://iarouse.com/dist-slim/v1/styles/main.css">
+
+    <style type="text/css">.jqstooltip { position: absolute;left: 0px;top: 0px;visibility: hidden;background: rgb(0, 0, 0) transparent;background-color: rgba(0,0,0,0.6);filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#99000000, endColorstr=#99000000);-ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr=#99000000, endColorstr=#99000000)";color: white;font: 10px arial, san serif;text-align: left;white-space: nowrap;padding: 5px;border: 1px solid white;z-index: 10000;}.jqsfield { color: white;font: 10px arial, san serif;text-align: left;}</style><script type="text/javascript" charset="UTF-8" src="./Web Application_files/{common,util,stats}.js"></script></head>
+    <body data-ng-app="app" id="app" class="app ng-scope" data-custom-page="" data-off-canvas-nav="" data-ng-controller="AppCtrl" data-ng-class=" {&#39;layout-boxed&#39;: admin.layout === &#39;boxed&#39;} ">
+        <!--[if lt IE 9]>
+            <div class="lt-ie9-bg">
+                <p class="browsehappy">You are using an <strong>outdated</strong> browser.</p>
+                <p>Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+            </div>
+        <![endif]-->
+
+        <!-- ngInclude: 'views/header.html' --><section data-ng-include=" &#39;views/header.html&#39; " id="header" class="header-container ng-scope header-fixed bg-white" data-ng-controller="HeaderCtrl" data-ng-class="{ &#39;header-fixed&#39;: admin.fixedHeader,
+                                  &#39;bg-white&#39;: [&#39;11&#39;,&#39;12&#39;,&#39;13&#39;,&#39;14&#39;,&#39;15&#39;,&#39;16&#39;,&#39;21&#39;].indexOf(admin.skin) &gt;= 0,
+                                  &#39;bg-dark&#39;: admin.skin === &#39;31&#39;,
+                                  &#39;bg-primary&#39;: [&#39;22&#39;,&#39;32&#39;].indexOf(admin.skin) &gt;= 0,
+                                  &#39;bg-success&#39;: [&#39;23&#39;,&#39;33&#39;].indexOf(admin.skin) &gt;= 0,
+                                  &#39;bg-info-alt&#39;: [&#39;24&#39;,&#39;34&#39;].indexOf(admin.skin) &gt;= 0,
+                                  &#39;bg-warning&#39;: [&#39;25&#39;,&#39;35&#39;].indexOf(admin.skin) &gt;= 0,
+                                  &#39;bg-danger&#39;: [&#39;26&#39;,&#39;36&#39;].indexOf(admin.skin) &gt;= 0
+                 }"><header class="top-header clearfix ng-scope">
+
+    <!-- Logo -->
+    <div class="logo bg-dark" ng-class="{ &#39;bg-dark&#39;: [&#39;11&#39;,&#39;31&#39;].indexOf(admin.skin) &gt;= 0,
+                     &#39;bg-white&#39;: admin.skin === &#39;21&#39;,
+                     &#39;bg-primary&#39;: [&#39;12&#39;,&#39;22&#39;,&#39;32&#39;].indexOf(admin.skin) &gt;= 0,
+                     &#39;bg-success&#39;: [&#39;13&#39;,&#39;23&#39;,&#39;33&#39;].indexOf(admin.skin) &gt;= 0,
+                     &#39;bg-info-alt&#39;: [&#39;14&#39;,&#39;24&#39;,&#39;34&#39;].indexOf(admin.skin) &gt;= 0,
+                     &#39;bg-warning&#39;: [&#39;15&#39;,&#39;25&#39;,&#39;35&#39;].indexOf(admin.skin) &gt;= 0,
+                     &#39;bg-danger&#39;: [&#39;16&#39;,&#39;26&#39;,&#39;36&#39;].indexOf(admin.skin) &gt;= 0,
+                    }">
+        <a href="http://iarouse.com/dist-slim/v1/index.html#/">
+            <span class="ng-binding">Slim</span>
+        </a>
+    </div>
+
+    <!-- needs to be put after logo to make it work -->
+    <div class="menu-button" toggle-off-canvas="">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+    </div>
+
+    <div class="top-nav">
+        <ul class="nav-left list-unstyled">
+            <li>
+                <a href="http://iarouse.com/dist-slim/v1/index.html#/" data-toggle-nav-collapsed-min="" class="toggle-min"><i class="ti-menu"></i></a>
+            </li>
+            <li class="dropdown hidden-xs">
+                <a href="javascript:;" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="ti-settings"></i></a>
+                <div class="dropdown-menu with-arrow panel panel-default admin-options" ui-not-close-on-click="">
+                    <div class="panel-heading"> Admin Options </div>
+                    <ul class="list-group">
+                        <li class="list-group-item">
+                            <p>Layouts Style</p>
+                            <label class="ui-radio"><input name="layout" type="radio" value="boxed" ng-model="admin.layout" class="ng-pristine ng-valid"><span>Boxed</span></label>
+                            <label class="ui-radio"><input name="layout" type="radio" value="wide" ng-model="admin.layout" class="ng-pristine ng-valid"><span>Wide</span></label>
+                        </li>
+                        <li class="list-group-item">
+                            <p>Menu Style</p>
+                            <label class="ui-radio"><input name="menu" type="radio" value="vertical" ng-model="admin.menu" class="ng-pristine ng-valid"><span>Vertical</span></label>
+                            <label class="ui-radio"><input name="menu" type="radio" value="horizontal" ng-model="admin.menu" class="ng-pristine ng-valid"><span>Horizontal</span></label>
+                        </li>
+                        <li class="list-group-item">
+                            <p>Additional</p>
+                            <label class="ui-checkbox"><input name="checkbox1" type="checkbox" value="option1" ng-model="admin.fixedHeader" class="ng-pristine ng-valid"><span>Fixed Top Header</span></label>
+                            <br>
+                            <label class="ui-checkbox"><input name="checkbox1" type="checkbox" value="option1" ng-model="admin.fixedSidebar" class="ng-pristine ng-valid"><span>Fixed Sidebar Menu</span></label>
+                        </li>
+                        <li class="list-group-item">
+                            <p>
+                                <span>Page Transition: </span> 
+                                <span class="space"></span>
+                                <select ng-model="admin.pageTransition" ng-options="ageTransitionOpt.name for ageTransitionOpt in pageTransitionOpts" class="ng-pristine ng-valid"><option value="0" selected="selected">Fade up</option><option value="1">Scale up</option><option value="2">Slide in from right</option><option value="3">Flip Y</option></select>
+                            </p>
+                        </li>
+                    </ul>
+                </div>
+            </li>
+            <li class="dropdown hidden-xs">
+                <a href="javascript:;" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="ti-paint-bucket"></i></a>
+                <div class="dropdown-menu with-arrow panel panel-default skin-options" ui-not-close-on-click="">
+                    <div class="panel-heading">Skin Options</div>
+                    <div class="panel-body">
+                        <div class="row">
+                            <div class="col-xs-4">
+                                <label class="skin-check">
+                                    <input type="radio" name="skin" value="11" ng-model="admin.skin" class="ng-pristine ng-valid">
+                                    <span class="skin-item bg-body">
+                                        <span class="overlay"><span class="glyphicon glyphicon-ok"></span></span>
+                                        <span class="bg-dark item-header"></span>
+                                        <span class="bg-white item-header"></span>
+                                        <span class="bg-dark"></span>
+                                    </span>
+                                </label>
+
+                                <label class="skin-check">
+                                    <input type="radio" name="skin" value="12" ng-model="admin.skin" class="ng-pristine ng-valid">
+                                    <span class="skin-item bg-body">
+                                        <span class="overlay"><span class="glyphicon glyphicon-ok"></span></span>
+                                        <span class="bg-primary item-header"></span>
+                                        <span class="bg-white item-header"></span>
+                                        <span class="bg-dark"></span> 
+                                    </span>
+                                </label>
+                                <label class="skin-check">
+                                    <input type="radio" name="skin" value="13" ng-model="admin.skin" class="ng-pristine ng-valid">
+                                    <span class="skin-item bg-body">
+                                        <span class="overlay"><span class="glyphicon glyphicon-ok"></span></span>
+                                        <span class="bg-success item-header"></span>
+                                        <span class="bg-white item-header"></span>
+                                        <span class="bg-dark"></span> 
+                                    </span>
+                                </label>
+                                <label class="skin-check">
+                                    <input type="radio" name="skin" value="14" ng-model="admin.skin" class="ng-pristine ng-valid">
+                                    <span class="skin-item bg-body">
+                                        <span class="overlay"><span class="glyphicon glyphicon-ok"></span></span>
+                                        <span class="bg-info-alt item-header"></span>
+                                        <span class="bg-white item-header"></span>
+                                        <span class="bg-dark"></span> 
+                                    </span>
+                                </label>
+                                <label class="skin-check">
+                                    <input type="radio" name="skin" value="15" ng-model="admin.skin" class="ng-pristine ng-valid">
+                                    <span class="skin-item bg-body">
+                                        <span class="overlay"><span class="glyphicon glyphicon-ok"></span></span>
+                                        <span class="bg-warning item-header"></span>
+                                        <span class="bg-white item-header"></span>
+                                        <span class="bg-dark"></span> 
+                                    </span>
+                                </label>
+                                <label class="skin-check">
+                                    <input type="radio" name="skin" value="16" ng-model="admin.skin" class="ng-pristine ng-valid">
+                                    <span class="skin-item bg-body">
+                                        <span class="overlay"><span class="glyphicon glyphicon-ok"></span></span>
+                                        <span class="bg-danger item-header"></span>
+                                        <span class="bg-white item-header"></span>
+                                        <span class="bg-dark"></span> 
+                                    </span>
+                                </label>
+                            </div>
+                            <div class="col-xs-4">
+                                <label class="skin-check">
+                                    <input type="radio" name="skin" value="21" ng-model="admin.skin" class="ng-pristine ng-valid">
+                                    <span class="skin-item bg-body">
+                                        <span class="overlay"><span class="glyphicon glyphicon-ok"></span></span>
+                                        <span class="bg-white item-header"></span>
+                                        <span class="bg-white item-header"></span>
+                                        <span class="bg-dark"></span> 
+                                    </span>
+                                </label>
+                                <label class="skin-check">
+                                    <input type="radio" name="skin" value="22" ng-model="admin.skin" class="ng-pristine ng-valid">
+                                    <span class="skin-item bg-body">
+                                        <span class="overlay"><span class="glyphicon glyphicon-ok"></span></span>
+                                        <span class="bg-primary item-header"></span>
+                                        <span class="bg-primary item-header"></span>
+                                        <span class="bg-dark"></span> 
+                                    </span>
+                                </label>
+                                <label class="skin-check">
+                                    <input type="radio" name="skin" value="23" ng-model="admin.skin" class="ng-pristine ng-valid">
+                                    <span class="skin-item bg-body">
+                                        <span class="overlay"><span class="glyphicon glyphicon-ok"></span></span>
+                                        <span class="bg-success item-header"></span>
+                                        <span class="bg-success item-header"></span>
+                                        <span class="bg-dark"></span> 
+                                    </span>
+                                </label>
+                                <label class="skin-check">
+                                    <input type="radio" name="skin" value="24" ng-model="admin.skin" class="ng-pristine ng-valid">
+                                    <span class="skin-item bg-body">
+                                        <span class="overlay"><span class="glyphicon glyphicon-ok"></span></span>
+                                        <span class="bg-info-alt item-header"></span>
+                                        <span class="bg-info-alt item-header"></span>
+                                        <span class="bg-dark"></span> 
+                                    </span>
+                                </label>
+                                <label class="skin-check">
+                                    <input type="radio" name="skin" value="25" ng-model="admin.skin" class="ng-pristine ng-valid">
+                                    <span class="skin-item bg-body">
+                                        <span class="overlay"><span class="glyphicon glyphicon-ok"></span></span>
+                                        <span class="bg-warning item-header"></span>
+                                        <span class="bg-warning item-header"></span>
+                                        <span class="bg-dark"></span> 
+                                    </span>
+                                </label>
+                                <label class="skin-check">
+                                    <input type="radio" name="skin" value="26" ng-model="admin.skin" class="ng-pristine ng-valid">
+                                    <span class="skin-item bg-body">
+                                        <span class="overlay"><span class="glyphicon glyphicon-ok"></span></span>
+                                        <span class="bg-danger item-header"></span>
+                                        <span class="bg-danger item-header"></span>
+                                        <span class="bg-dark"></span> 
+                                    </span>
+                                </label>                               
+                            </div>
+                            <div class="col-xs-4">
+                                <label class="skin-check">
+                                    <input type="radio" name="skin" value="31" ng-model="admin.skin" class="ng-pristine ng-valid">
+                                    <span class="skin-item bg-body">
+                                        <span class="overlay"><span class="glyphicon glyphicon-ok"></span></span>
+                                        <span class="bg-dark item-header"></span>
+                                        <span class="bg-dark item-header"></span>
+                                        <span class="bg-white"></span> 
+                                    </span>
+                                </label> 
+                                <label class="skin-check">
+                                    <input type="radio" name="skin" value="32" ng-model="admin.skin" class="ng-pristine ng-valid">
+                                    <span class="skin-item bg-body">
+                                        <span class="overlay"><span class="glyphicon glyphicon-ok"></span></span>
+                                        <span class="bg-primary item-header"></span>
+                                        <span class="bg-primary item-header"></span>
+                                        <span class="bg-white"></span> 
+                                    </span>
+                                </label>
+                                <label class="skin-check">
+                                    <input type="radio" name="skin" value="33" ng-model="admin.skin" class="ng-pristine ng-valid">
+                                    <span class="skin-item bg-body">
+                                        <span class="overlay"><span class="glyphicon glyphicon-ok"></span></span>
+                                        <span class="bg-success item-header"></span>
+                                        <span class="bg-success item-header"></span>
+                                        <span class="bg-white"></span> 
+                                    </span>
+                                </label>
+                                <label class="skin-check">
+                                    <input type="radio" name="skin" value="34" ng-model="admin.skin" class="ng-pristine ng-valid">
+                                    <span class="skin-item bg-body">
+                                        <span class="overlay"><span class="glyphicon glyphicon-ok"></span></span>
+                                        <span class="bg-info-alt item-header"></span>
+                                        <span class="bg-info-alt item-header"></span>
+                                        <span class="bg-white"></span> 
+                                    </span>
+                                </label>
+                                <label class="skin-check">
+                                    <input type="radio" name="skin" value="35" ng-model="admin.skin" class="ng-pristine ng-valid">
+                                    <span class="skin-item bg-body">
+                                        <span class="overlay"><span class="glyphicon glyphicon-ok"></span></span>
+                                        <span class="bg-warning item-header"></span>
+                                        <span class="bg-warning item-header"></span>
+                                        <span class="bg-white"></span> 
+                                    </span>
+                                </label>
+                                <label class="skin-check">
+                                    <input type="radio" name="skin" value="36" ng-model="admin.skin" class="ng-pristine ng-valid">
+                                    <span class="skin-item bg-body">
+                                        <span class="overlay"><span class="glyphicon glyphicon-ok"></span></span>
+                                        <span class="bg-danger item-header"></span>
+                                        <span class="bg-danger item-header"></span>
+                                        <span class="bg-white"></span> 
+                                    </span>
+                                </label>                               
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </li>
+            <li class="search-box visible-md visible-lg">
+                <div class="input-group">
+                    <span class="input-group-addon"><i class="ti-search"></i></span>
+                    <input type="text" class="form-control" placeholder="Search...">
+                </div>
+            </li>
+            <li class="dropdown">
+                <a href="javascript:;" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <i class="ti-email"></i>
+                    <span class="badge badge-danger">3</span>
+                </a>
+                <div class="dropdown-menu with-arrow panel panel-default">
+                    <div class="panel-heading">
+                        You have 3 mails.
+                    </div>
+                    <ul class="list-group">
+                        <li class="list-group-item">
+                            <a href="javascript:;" class="media">
+                                <span class="pull-left media-icon">
+                                    <span class="btn-icon btn-icon-round btn-warning"><i class="ti-email"></i></span>
+                                </span>
+                                <div class="media-body">
+                                    <span class="block">Lisa sent you a mail</span>
+                                    <span class="text-muted block">2min ago</span>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="list-group-item">
+                            <a href="javascript:;" class="media">
+                                <span class="pull-left media-icon">
+                                    <span class="btn-icon btn-icon-round btn-info"><i class="ti-email"></i></span>
+                                </span>
+                                <div class="media-body">
+                                    <span class="block">Jane sent you a mail</span>
+                                    <span class="text-muted">3 hours ago</span>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="list-group-item">
+                            <a href="javascript:;" class="media">
+                                <span class="pull-left media-icon">
+                                    <span class="btn-icon btn-icon-round btn-success"><i class="ti-email"></i></span>
+                                </span>
+                                <div class="media-body">
+                                    <span class="block">Lynda sent you a mail</span>
+                                    <span class="text-muted">9 hours ago</span>
+                                </div>
+                            </a>
+                        </li>                       
+                    </ul>
+                    <div class="panel-footer">
+                        <a href="http://iarouse.com/dist-slim/v1/index.html#/mail/inbox">Show all mails.</a>
+                    </div>
+                </div>
+            </li>
+            <li class="dropdown">
+                <a href="javascript:;" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <i class="ti-bell"></i>
+                    <span class="badge badge-info">3</span>
+                </a>
+                <div class="dropdown-menu with-arrow panel panel-default">
+                    <div class="panel-heading">
+                        You have 3 notifications.
+                    </div>
+                    <ul class="list-group">
+                        <li class="list-group-item">
+                            <a href="javascript:;" class="media">
+                                <span class="pull-left media-icon">
+                                    <span class="btn-icon btn-icon-round btn-success"><i class="ti-bell"></i></span>
+                                </span>
+                                <div class="media-body">
+                                    <span class="block">New tasks needs to be done</span>
+                                    <span class="text-muted block">2min ago</span>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="list-group-item">
+                            <a href="javascript:;" class="media">
+                                <span class="pull-left media-icon">
+                                    <span class="btn-icon btn-icon-round btn-info"><i class="ti-bell"></i></span>
+                                </span>
+                                <div class="media-body">
+                                    <span class="block">Change your password</span>
+                                    <span class="text-muted">3 hours ago</span>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="list-group-item">
+                            <a href="javascript:;" class="media">
+                                <span class="pull-left media-icon">
+                                    <span class="btn-icon btn-icon-round btn-danger"><i class="ti-bell"></i></span>
+                                </span>
+                                <div class="media-body">
+                                    <span class="block">New feature added</span>
+                                    <span class="text-muted">9 hours ago</span>
+                                </div>
+                            </a>
+                        </li>                       
+                    </ul>
+                    <div class="panel-footer">
+                        <a href="http://iarouse.com/dist-slim/v1/index.html#/mail/inbox">Show all notifications.</a>
+                    </div>
+                </div>
+            </li>
+        </ul> 
+
+        <ul class="nav-right pull-right list-unstyled">
+
+            <li class="dropdown text-normal nav-profile">
+                <a href="javascript:;" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <img src="./Web Application_files/g1.jpg" alt="" class="img-circle img30_30">
+                    <span class="hidden-xs">
+                        <span data-i18n="Lisa Doe">Lisa Doe</span>
+                    </span>
+                </a>
+                <ul class="dropdown-menu with-arrow pull-right">
+                    <li>
+                        <a href="http://iarouse.com/dist-slim/v1/index.html#/pages/profile">
+                            <i class="ti-user"></i>
+                            <span data-i18n="My Profile">My Profile</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="http://iarouse.com/dist-slim/v1/index.html#/tasks/tasks">
+                            <i class="ti-check-box"></i>
+                            <span data-i18n="My Tasks">My Tasks</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="http://iarouse.com/dist-slim/v1/index.html#/pages/lock-screen">
+                            <i class="ti-lock"></i>
+                            <span data-i18n="Lock">Lock</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="http://iarouse.com/dist-slim/v1/index.html#/pages/signin">
+                            <i class="ti-export"></i>
+                            <span data-i18n="Log Out">Log Out</span>
+                        </a>
+                    </li>
+                </ul>
+            </li>
+            <li class="dropdown langs text-normal ng-scope" data-ng-controller="LangCtrl">
+                <a href="javascript:;" class="dropdown-toggle active-flag" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <div class="flag flags-american"></div>
+                </a>
+                <ul class="dropdown-menu with-arrow  pull-right list-langs" role="menu">
+                    <li data-ng-show="lang !== &#39;English&#39; " class="ng-hide">
+                        <a href="javascript:;" data-ng-click="setLang(&#39;English&#39;)"><div class="flag flags-american"></div> English</a></li>
+                    <li data-ng-show="lang !== &#39;Español&#39; " class="">
+                        <a href="javascript:;" data-ng-click="setLang(&#39;Español&#39;)"><div class="flag flags-spain"></div> Español</a></li>
+                    <li data-ng-show="lang !== &#39;日本語&#39; " class="">
+                        <a href="javascript:;" data-ng-click="setLang(&#39;日本語&#39;)"><div class="flag flags-japan"></div> 日本語</a></li>
+                    <li data-ng-show="lang !== &#39;中文&#39; " class="">
+                        <a href="javascript:;" data-ng-click="setLang(&#39;中文&#39;)"><div class="flag flags-china"></div> 中文</a></li>
+                    <li data-ng-show="lang !== &#39;Deutsch&#39; " class="">
+                        <a href="javascript:;" data-ng-click="setLang(&#39;Deutsch&#39;)"><div class="flag flags-germany"></div> Deutsch</a></li>
+                    <li data-ng-show="lang !== &#39;français&#39; " class="">
+                        <a href="javascript:;" data-ng-click="setLang(&#39;français&#39;)"><div class="flag flags-france"></div> français</a></li>
+                    <li data-ng-show="lang !== &#39;Italiano&#39; " class="">
+                        <a href="javascript:;" data-ng-click="setLang(&#39;Italiano&#39;)"><div class="flag flags-italy"></div> Italiano</a></li>
+                    <li data-ng-show="lang !== &#39;Portugal&#39; " class="">
+                        <a href="javascript:;" data-ng-click="setLang(&#39;Portugal&#39;)"><div class="flag flags-portugal"></div> Portugal</a></li>
+                    <li data-ng-show="lang !== &#39;Русский язык&#39; " class="">
+                        <a href="javascript:;" data-ng-click="setLang(&#39;Русский язык&#39;)"><div class="flag flags-russia"></div> Русский язык</a></li>
+                    <li data-ng-show="lang !== &#39;한국어&#39; " class="">
+                        <a href="javascript:;" data-ng-click="setLang(&#39;한국어&#39;)"><div class="flag flags-korea"></div> 한국어</a></li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+
+</header>
+</section>
+
+        <div class="main-container">
+            <!-- ngInclude: 'views/nav.html' --><aside data-ng-include=" &#39;views/nav.html&#39; " id="nav-container" class="nav-container ng-scope nav-fixed nav-vertical bg-dark" data-ng-class="{ &#39;nav-fixed&#39;: admin.fixedSidebar,
+                                    &#39;nav-horizontal&#39;: admin.menu === &#39;horizontal&#39;,
+                                    &#39;nav-vertical&#39;: admin.menu === &#39;vertical&#39;,
+                                    &#39;bg-white&#39;: [&#39;31&#39;,&#39;32&#39;,&#39;33&#39;,&#39;34&#39;,&#39;35&#39;,&#39;36&#39;].indexOf(admin.skin) &gt;= 0,
+                                    &#39;bg-dark&#39;: [&#39;31&#39;,&#39;32&#39;,&#39;33&#39;,&#39;34&#39;,&#39;35&#39;,&#39;36&#39;].indexOf(admin.skin) &lt; 0
+                   }">        
+<div class="nav-wrapper ng-scope">
+    <div class="slimScrollDiv" style="position: relative; overflow: hidden; width: auto; height: 100%;"><ul id="nav" class="nav ng-scope" data-ng-controller="NavCtrl" data-slim-scroll="" data-collapse-nav="" data-highlight-active="" style="overflow: hidden; width: auto; height: 100%;">
+        <li class=""><a href="http://iarouse.com/dist-slim/v1/index.html#/dashboard"> <i class="ti-home"></i><span data-i18n="Dashboard">Dashboard</span> </a></li>
+        <li class="open active">
+            <a href="http://iarouse.com/dist-slim/v1/index.html#/ui"><i class="ti-wand"></i><span data-i18n="UI Kit">UI Kit</span></a>
+            <ul style="display: block;">
+                <li class=""><a href="http://iarouse.com/dist-slim/v1/index.html#/ui/typography"><i class="ti-angle-right"></i><span data-i18n="Typography">Typography</span></a></li>
+                <li class=""><a href="http://iarouse.com/dist-slim/v1/index.html#/ui/icons"><i class="ti-angle-right"></i><span data-i18n="Icons">Icons</span> <span class="badge badge-info">3</span></a></li>
+                <li class=""><a href="http://iarouse.com/dist-slim/v1/index.html#/ui/buttons"><i class="ti-angle-right"></i><span data-i18n="Buttons">Buttons</span></a></li>
+                <li class=""><a href="http://iarouse.com/dist-slim/v1/index.html#/ui/components"><i class="ti-angle-right"></i><span data-i18n="Components">Components</span> <span class="badge badge-danger">17</span></a></li>
+                <li class="active"><a href="./Web Application_files/Web Application.html"><i class="ti-angle-right"></i><span data-i18n="Boxes">Boxes</span></a></li>
+                <li><a href="http://iarouse.com/dist-slim/v1/index.html#/ui/widgets"><i class="ti-angle-right"></i><span data-i18n="Widgets">Widgets</span> <span class="badge badge-success">13</span></a></li>
+                <li><a href="http://iarouse.com/dist-slim/v1/index.html#/ui/timeline"><i class="ti-angle-right"></i><span data-i18n="Timeline">Timeline</span></a></li>
+                <li><a href="http://iarouse.com/dist-slim/v1/index.html#/ui/nested-lists"><i class="ti-angle-right"></i><span data-i18n="Nested Lists">Nested Lists</span></a></li>
+                <li><a href="http://iarouse.com/dist-slim/v1/index.html#/ui/pricing-tables"><i class="ti-angle-right"></i><span data-i18n="Pricing Tables">Pricing Tables</span></a></li>
+                <li><a href="http://iarouse.com/dist-slim/v1/index.html#/ui/maps"><i class="ti-angle-right"></i><span data-i18n="Maps">Maps</span></a></li>
+                <li><a href="http://iarouse.com/dist-slim/v1/index.html#/ui/grids"><i class="ti-angle-right"></i><span data-i18n="Grids">Grids</span></a></li>
+            </ul>
+        <i class="ti-angle-down icon-has-ul-h"></i><i class="ti-angle-double-right icon-has-ul"></i></li>
+        <li>
+            <a href="http://iarouse.com/dist-slim/v1/index.html#/pages"><i class="ti-files"></i><span data-i18n="Pages">Pages</span></a>
+            <ul style="">
+                <li><a href="http://iarouse.com/dist-slim/landing/index.html" target="_blank"><i class="ti-angle-right"></i><span data-i18n="Landing">Landing</span></a></li>
+                <li><a href="http://iarouse.com/dist-slim/v1/index.html#/pages/signin"><i class="ti-angle-right"></i><span data-i18n="Sign In">Sign In</span></a></li>
+                <li><a href="http://iarouse.com/dist-slim/v1/index.html#/pages/signup"><i class="ti-angle-right"></i><span data-i18n="Sign Up">Sign Up</span></a></li>
+                <li><a href="http://iarouse.com/dist-slim/v1/index.html#/pages/forgot-password"><i class="ti-angle-right"></i><span data-i18n="Forgot Password">Forgot Password</span></a></li>
+                <li><a href="http://iarouse.com/dist-slim/v1/index.html#/pages/lock-screen"><i class="ti-angle-right"></i><span data-i18n="Lock Screen">Lock Screen</span></a></li>
+                <li><a href="http://iarouse.com/dist-slim/v1/index.html#/pages/profile"><i class="ti-angle-right"></i><span data-i18n="User Profile">User Profile</span></a></li>
+                <li><a href="http://iarouse.com/dist-slim/v1/index.html#/pages/invoice"><i class="ti-angle-right"></i><span data-i18n="Invoice">Invoice</span></a></li>
+                <li><a href="http://iarouse.com/dist-slim/v1/index.html#/pages/404"><i class="ti-angle-right"></i>404 <span data-i18n="Error">Error</span></a></li>
+                <li><a href="http://iarouse.com/dist-slim/v1/index.html#/pages/500"><i class="ti-angle-right"></i>500 <span data-i18n="Error">Error</span></a></li>
+                <li><a href="http://iarouse.com/dist-slim/v1/index.html#/pages/blank"><i class="ti-angle-right"></i><span data-i18n="Blank Page">Blank Page</span></a></li>
+            </ul>
+        <i class="ti-angle-down icon-has-ul-h"></i><i class="ti-angle-double-right icon-has-ul"></i></li>
+        <li>
+            <a href="http://iarouse.com/dist-slim/v1/index.html#/table"><i class="ti-layout-grid4"></i><span data-i18n="Tables">Tables</span></a>
+            <ul style="">
+                <li><a href="http://iarouse.com/dist-slim/v1/index.html#/tables/static"><i class="ti-angle-right"></i><span data-i18n="Static Tables">Static Tables</span></a></li>
+                <li><a href="http://iarouse.com/dist-slim/v1/index.html#/tables/responsive"><i class="ti-angle-right"></i><span data-i18n="Responsive Tables">Responsive Tables</span> <span class="badge badge-info">2</span></a></li>
+                <li><a href="http://iarouse.com/dist-slim/v1/index.html#/tables/dynamic"><i class="ti-angle-right"></i><span data-i18n="Dynamic Tables">Dynamic Tables</span></a></li>
+            </ul>
+        <i class="ti-angle-down icon-has-ul-h"></i><i class="ti-angle-double-right icon-has-ul"></i></li>
+        <li>
+            <a href="http://iarouse.com/dist-slim/v1/index.html#/form"><i class="ti-pencil"></i><span data-i18n="Forms">Forms</span></a>
+            <ul style="">
+                <li><a href="http://iarouse.com/dist-slim/v1/index.html#/forms/layouts"><i class="ti-angle-right"></i><span data-i18n="Form Layouts">Form Layouts</span></a></li>
+                <li><a href="http://iarouse.com/dist-slim/v1/index.html#/forms/elements"><i class="ti-angle-right"></i><span data-i18n="Form Elements">Form Elements</span> <span class="badge badge-info">13</span></a></li>
+                <li><a href="http://iarouse.com/dist-slim/v1/index.html#/forms/validation"><i class="ti-angle-right"></i><span data-i18n="Form Validation">Form Validation</span></a></li>
+                <li><a href="http://iarouse.com/dist-slim/v1/index.html#/forms/wizard"><i class="ti-angle-right"></i><span data-i18n="Form Wizard">Form Wizard</span></a></li>
+            </ul>
+        <i class="ti-angle-down icon-has-ul-h"></i><i class="ti-angle-double-right icon-has-ul"></i></li>
+       <li>
+            <a href="http://iarouse.com/dist-slim/v1/index.html#/charts"><i class="ti-bar-chart"></i><span data-i18n="Charts">Charts</span></a>
+            <ul style="">
+                <li><a href="http://iarouse.com/dist-slim/v1/index.html#/charts/flot"><i class="ti-angle-right"></i>Flot <span data-i18n="Charts">Charts</span></a></li>
+                <li><a href="http://iarouse.com/dist-slim/v1/index.html#/charts/charts"><i class="ti-angle-right"></i>Other <span data-i18n="Charts">Charts</span></a></li>
+            </ul>
+        <i class="ti-angle-down icon-has-ul-h"></i><i class="ti-angle-double-right icon-has-ul"></i></li>
+        <li class="nav-task">
+            <a href="http://iarouse.com/dist-slim/v1/index.html#/tasks/tasks">
+                <i class="ti-check-box"></i><span data-i18n="Tasks">Tasks</span>
+                <span class="badge badge-danger main-badge ng-binding" data-ng-show="taskRemainingCount &gt; 0">4</span>
+            </a>
+        </li>
+        <li>
+            <a href="http://iarouse.com/dist-slim/v1/index.html#/mail"><i class="ti-email"></i><span data-i18n="Mail">Mail</span></a>
+            <ul style="">
+                <li><a href="http://iarouse.com/dist-slim/v1/index.html#/mail/inbox"><i class="ti-angle-right"></i><span data-i18n="Inbox">Inbox</span></a></li>
+                <li><a href="http://iarouse.com/dist-slim/v1/index.html#/mail/compose"><i class="ti-angle-right"></i><span data-i18n="Compose">Compose</span></a></li>
+                <li><a href="http://iarouse.com/dist-slim/v1/index.html#/mail/single"><i class="ti-angle-right"></i><span data-i18n="Single Mail">Single Mail</span></a></li>
+            </ul>
+        <i class="ti-angle-down icon-has-ul-h"></i><i class="ti-angle-double-right icon-has-ul"></i></li>
+    </ul><div class="slimScrollBar" style="width: 7px; position: absolute; top: 0px; opacity: 0.4; display: none; border-top-left-radius: 7px; border-top-right-radius: 7px; border-bottom-right-radius: 7px; border-bottom-left-radius: 7px; z-index: 99; right: 1px; height: 969px; background: rgb(0, 0, 0);"></div><div class="slimScrollRail" style="width: 7px; height: 100%; position: absolute; top: 0px; display: none; border-top-left-radius: 7px; border-top-right-radius: 7px; border-bottom-right-radius: 7px; border-bottom-left-radius: 7px; opacity: 0.2; z-index: 90; right: 1px; background: rgb(51, 51, 51);"></div></div>
+</div></aside>
+
+            <div id="content" class="content-container">
+                <!-- ngView:  --><section data-ng-view="" class="view-container animate-fade-up"><div class="page ng-scope">
+
+      
+
+    <div class="panel panel-default">
+        <div class="panel-heading"><span class="glyphicon glyphicon-th"></span> Icon Boxes</div>
+        <div class="panel-body">
+
+            <div class="row">
+                <div class="col-md-3">
+                    <article class="icon-box icon-box-vertical">
+                        <div class="icon-container">
+                            <span class="ti-rocket"></span>
+                        </div>
+                        <div class="desc-container">
+                            <h4>Lorem Ipsum</h4>
+                            <div class="desc">Dolor sit amet, id possimus consectetur adipisicing elit.</div>
+                        </div>
+                    </article>
+                </div>
+                <div class="col-md-3">
+                    <article class="icon-box icon-box-vertical">
+                        <div class="icon-container">
+                            <span class="ti-palette"></span>
+                        </div>
+                        <div class="desc-container">
+                            <h4>Nihil Ipsa</h4>
+                            <div class="desc">Cumque placeat beatae unde quas, nam quisquam perspiciatis</div>
+                        </div>
+                    </article>                    
+                </div>
+                <div class="col-md-3">
+                    <article class="icon-box icon-box-vertical">
+                        <div class="icon-container">
+                            <span class="ti-pulse"></span>
+                        </div>
+                        <div class="desc-container">
+                            <h4>Quod Nostrum</h4>
+                            <div class="desc">Doloribus velit saepe obcaecati quisquam fugiat blanditiis!</div>
+                        </div>
+                    </article>                    
+                </div>
+                <div class="col-md-3">
+                    <article class="icon-box icon-box-vertical">
+                        <div class="icon-container">
+                            <span class="ti-files"></span>
+                        </div>
+                        <div class="desc-container">
+                            <h4>Minima Vitae</h4>
+                            <div class="desc">Obcaecati dolor sit amet, consectetur adipisicing elit.</div>
+                        </div>
+                    </article>                    
+                </div>
+            </div>
+
+            <div class="divider divider-xl"></div>
+            <div class="divider divider-lg"></div>
+            <div class="row">
+                <div class="col-md-4">
+                    <article class="icon-box icon-box-horizontal">
+                        <div class="icon-container">
+                            <span class="ti-headphone"></span>
+                        </div>
+                        <div class="desc-container">
+                            <h4>Beatae Ipsa</h4>
+                            <div class="desc">Cumque placeat beatae unde quas, nam quisquam perspiciatis</div>
+                        </div>
+                    </article>                         
+                </div>
+                <div class="col-md-4">
+                    <article class="icon-box icon-box-horizontal">
+                        <div class="icon-container">
+                            <span class="ti-game"></span>
+                        </div>
+                        <div class="desc-container">
+                            <h4>Obcaecati Vitae</h4>
+                            <div class="desc">Obcaecati dolor sit amet, consectetur adipisicing elit.</div>
+                        </div>
+                    </article>                    
+                </div>
+                <div class="col-md-4">
+                    <article class="icon-box icon-box-horizontal">
+                        <div class="icon-container">
+                            <span class="ti-package"></span>
+                        </div>
+                        <div class="desc-container">
+                            <h4>Doloribus velit</h4>
+                            <div class="desc">Doloribus velit saepe obcaecati quisquam fugiat blanditiis!</div>
+                        </div>
+                    </article>                     
+                </div>
+            </div>
+            <div class="divider divider-xl"></div>
+
+        </div>
+    </div>
+
+
+    <!-- Bullet -->
+    <section class="panel panel-default">
+        <div class="panel-heading"><span class="glyphicon glyphicon-th"></span> Bullet</div>
+        <div class="panel-body">
+            <div class="divider divider-lg"></div>
+
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="ui-bullet">
+                        <div class="btn-icon btn-icon-round btn-icon-lg bg-primary">
+                            <i class="ti-cut"></i>
+                        </div>
+                        <div class="ui-bullet-content">
+                            <h3>This Bullet Title</h3>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deleniti, nesciunt, eius accusamus quam quaerat molestiae voluptas dignissimos tempora non veniam. Sint libero quia repellendus eveniet dolores distinctio amet consectetur suscipit.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="ui-bullet">
+                        <div class="btn-icon btn-icon-round btn-icon-lg bg-info">
+                            <i class="ti-stats-up"></i>
+                        </div>
+                        <div class="ui-bullet-content">
+                            <h3>Another Bullet Title</h3>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deleniti, nesciunt, eius accusamus quam quaerat molestiae voluptas dignissimos tempora non veniam. Sint libero quia repellendus eveniet dolores distinctio amet consectetur suscipit.</p>
+                        </div>
+                    </div>                    
+                </div>
+                <div class="col-md-4">
+                    <div class="ui-bullet">
+                        <div class="btn-icon btn-icon-round btn-icon-lg bg-danger">
+                            <i class="ti-image"></i>
+                        </div>
+                        <div class="ui-bullet-content">
+                            <h3>Last Bullet Title</h3>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deleniti, nesciunt, eius accusamus quam quaerat molestiae voluptas dignissimos tempora non veniam. Sint libero quia repellendus eveniet dolores distinctio amet consectetur suscipit.</p>
+                        </div>
+                    </div>                    
+                </div>
+            </div>
+
+            <div class="divider divider-lg"></div>
+        </div>
+    </section>
+    <!-- end Bullet -->
+    
+
+    <div class="panel panel-default">
+        <div class="panel-heading"><span class="glyphicon glyphicon-th"></span> Photo Boxes</div>
+        <div class="panel-body">
+
+            <div class="row">
+                <div class="col-md-4">
+                    <article class="photo-box">
+                        <div class="photo-container">
+                            <div class="mask"></div>
+                            <img src="./Web Application_files/600_400-1.jpg" alt="">
+                        </div>
+                        <div class="desc-container">
+                            <h4>Quod Nostrum</h4>
+                            <div class="desc">
+                                <p>Quisquam beatae, consequatur maiores iure, deserunt blanditiis, autem architecto maxime nam. Dicta nihil laudantium nulla.</p>
+                            </div>
+                        </div>
+                    </article>                      
+                </div>
+                <div class="col-md-4">
+                    <article class="photo-box">
+                        <div class="photo-container">
+                            <div class="mask"></div>
+                            <img src="./Web Application_files/600_400-2.jpg" alt="">
+                        </div>
+                        <div class="desc-container">
+                            <h4>Quod Nostrum</h4>
+                            <div class="desc">Doloribus velit saepe obcaecati quisquam fugiat blanditiis, velit saepe obcaecati quisquam fugiat blanditiis!</div>
+                        </div>
+                    </article>                      
+                </div>
+                 <div class="col-md-4">
+                    <article class="photo-box">
+                        <div class="photo-container">
+                            <div class="mask"></div>
+                            <img src="./Web Application_files/600_400-3.jpg" alt="">
+                        </div>
+                        <div class="desc-container">
+                            <h4>Quod Nostrum</h4>
+                            <div class="desc">Doloribus velit saepe obcaecati quisquam fugiat blanditiis! Voluptatum similique architecto nisi eos.</div>
+                        </div>
+                    </article>                      
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+</div></section>
+            </div>
+        </div>
+
+
+        <script src="./Web Application_files/js"></script><script src="./Web Application_files/main.js" type="text/javascript"></script>
+        <script src="./Web Application_files/vendor.js"></script>
+
+        <script src="./Web Application_files/ui.js"></script>
+
+        <script src="./Web Application_files/app.js"></script>
+    
+<div class="jvectormap-label" style="display: none; left: 461px; top: 185px;">Canada</div><div id="flotTip" style="display: none; position: absolute;"></div></body></html>

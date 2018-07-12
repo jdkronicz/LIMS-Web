@@ -1,0 +1,316 @@
+﻿
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+		<meta charset="utf-8" />
+		
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
+
+		<!-- bootstrap & fontawesome -->
+		<link rel="stylesheet" href="assets/css/bootstrap.min.css" />
+		<link rel="stylesheet" href="assets/css/font-awesome.css" />
+
+		<!-- page specific plugin styles -->
+		<link rel="stylesheet" href="assets/css/jquery-ui.custom.min.css" />
+		<link rel="stylesheet" href="assets/css/jquery.gritter.css" />
+                <!-- text fonts -->
+		<link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Open+Sans:400italic,700italic,300,400,700">
+	
+		<!-- ace styles -->
+		<link rel="stylesheet" href="assets/css/ace.min.css" id="main-ace-style" />
+
+		<!--[if lte IE 9]>
+			<link rel="stylesheet" href="assets/css/ace-part2.min.css" />
+		<![endif]-->
+
+
+		<!--[if lte IE 9]>
+		  <link rel="stylesheet" href="assets/css/ace-ie.min.css" />
+		<![endif]-->
+
+		<!-- inline styles related to this page -->
+		<style>
+			/* some elements used in demo only */
+			.spinner-preview {
+				width: 100px;
+				height: 100px;
+				text-align: center;
+				margin-top: 60px;
+			}
+			
+			.dropdown-preview {
+				margin: 0 5px;
+				display: inline-block;
+			}
+			.dropdown-preview  > .dropdown-menu {
+				display: block;
+				position: static;
+				margin-bottom: 5px;
+			}
+		</style>
+
+		<!-- ace settings handler -->
+		<script src="assets/js/ace-extra.min.js"></script>
+
+		<!-- HTML5shiv and Respond.js for IE8 to support HTML5 elements and media queries -->
+
+		<!--[if lte IE 8]>
+		<script src="assets/js/html5shiv.js"></script>
+		<script src="assets/js/respond.js"></script>
+		<![endif]-->
+	</head>
+
+	<body class="no-skin glossed">
+	 <!-- Fixed navbar -->
+   <header>
+        
+
+        <div class="">
+            <div class="banner-logo" style="float: left;">
+                <a href="http://www.phmc.state.pa.us/" target="_blank"><img src="PenndotLogo.png" /></a>
+            </div>
+
+            <div class="banner-image" style="float:right;">
+                <img src="Untitled1.png"/>
+            </div>
+            <div class="clearfix"></div>
+
+            <!-- Topbar - Keep code for future use -->
+            
+
+            <!-- Main Navigation Bar -->
+            <nav class="navbar navbar-default" role="navigation">
+                <div class="container-fluid">
+
+                    <!-- Brand and toggle get grouped for better mobile display -->
+                    <div class="navbar-header">
+                        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#crgis_collapse">
+                            <span class="sr-only">Toggle navigation</span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </button>
+                        <a href="http://www.pa.gov/" target="_blank"><img style="float: left;" src="enterprise_pa_plain.png" /></a>
+                    </div>
+
+                    <!-- Collect the nav links, forms, and other content for toggling -->
+                    <div class="collapse navbar-collapse" id="crgis_collapse">
+                       
+                        <ul class="nav navbar-nav navbar-right">
+
+                            <!-- Home -->
+                            <li><a id="menu-home" href="index.html"><b class="fa fa-home bigger-120"></b> Home</a></li>
+                             <li><a id="A1" data-target="#" href="contract.html">Contracts</a></li>
+                              <li class="dropdown profile_menu">
+        <a href="#" class="dropdown-toggle" data-toggle="dropdown"> Projects <b class="caret"></b></a>
+        <ul class="dropdown-menu">
+          <li><a href="#">Manage Projects</a></li>
+         
+          <li class="divider"></li>
+          <li><a href="#">LTAP Project</a></li>
+            <li><a href="#">TPF Project</a></li>
+        </ul>
+      </li>
+                            <li class="dropdown profile_menu">
+        <a href="#" class="dropdown-toggle" data-toggle="dropdown"> Administrator <b class="caret"></b></a>
+        <ul class="dropdown-menu">
+          <li><a href="#">Manage Agency</a></li>
+          <li><a href="#">Manage People</a></li>
+            <li><a href="#">Manage Person</a></li>
+             <li><a href="#">Manage Vendor</a></li>
+          <li class="divider"></li>
+          <li><a href="#">Manage Category</a></li>
+        </ul>
+      </li>
+
+                            <!-- About -->
+                            <li><a id="menu-about" data-target="#" href="#">About</a></li>
+
+                            
+                                <!-- Sign-In -->
+                                
+                           
+      <li class="dropdown profile_menu">
+        <a href="#" class="dropdown-toggle" data-toggle="dropdown"><b class="fa fa-user bigger-120"></b> Satya Pala <b class="caret"></b></a>
+        <ul class="dropdown-menu">
+          <li><a href="#">My Account</a></li>
+         
+          <li class="divider"></li>
+          <li><a href="#">Sign Out</a></li>
+        </ul>
+      </li>
+    
+
+                        </ul>
+                    </div>
+                    <!-- /.navbar-collapse -->
+                </div>
+                <!-- /.container-fluid -->
+            </nav>
+
+        </div>
+    </header>
+
+
+		<div class="main-container" id="main-container">
+			
+			<div id="sidebar" class="sidebar                  responsive">
+				
+			
+			
+
+				
+			</div>
+
+			<div class="main-content">
+			
+				<div class="page-content">
+				
+					<div class="page-content-area">
+						
+							
+                            <div class="row">
+							<div class="col-xs-12">
+                                <div class="container-fluid">
+  <div class="col-md-12">
+        <div class="widget widget-blue">
+          <div class="widget-title">
+         
+            <h3><i class="fa fa-search"></i> Agency Details</h3>
+          </div>
+          <div class="widget-content">
+           <div class="container-fluid">
+  
+  <form class="form-horizontal">
+     
+      
+       <div class="form-group">
+          <label class="control-label col-sm-2">Agency Id</label>
+          <div class="col-md-2">
+             <input type="text" class="form-control">
+        
+          </div>
+           
+      </div>
+
+
+      
+       <div class="form-group">
+          <label class="control-label col-sm-2">Agency Name</label>
+          <div class="col-md-7">
+              <textarea class="form-control" rows="4">xxxxxxxxxxxxxxxxxxxxxxxxxx</textarea> 
+        
+          </div>
+          
+      </div>
+      
+
+    
+      <div class="clearfix"></div>
+                              
+       <div class="clearfix form-actions">
+										<div class="col-md-offset-7">
+											
+                  <button type="submit" class="btn btn-primary">Save</button>
+               
+  <button type="submit" class="btn btn-primary">Cancel</button>
+											 <button type="submit" class="btn btn-primary">Delete</button>
+										</div>
+									</div>
+
+      
+         
+  </form>
+    
+</div>
+          </div>
+        </div>
+
+                                      
+                                </div>
+
+                                            
+  </div>
+</div>
+                                </div>
+                               
+      
+
+
+                    
+                            
+                        </div>
+                               
+      </div>
+						</div><!-- /.page-header -->
+
+						
+					</div><!-- /.page-content-area -->
+				
+			</div><!-- /.main-content -->
+
+		
+
+		</div><!-- /.main-container -->
+
+		<!-- basic scripts -->
+       
+
+		<!--[if IE]>
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+<![endif]-->
+
+		<!--[if !IE]> -->
+		<script type="text/javascript">
+		    window.jQuery || document.write("<script src='assets/js/jquery-1.11.1.min.js'>" + "<" + "/script>");
+		</script>
+
+		<!-- <![endif]-->
+
+		<!--[if IE]>
+<script type="text/javascript">
+ window.jQuery || document.write("<script src='assets/js/jquery1x.min.js'>"+"<"+"/script>");
+</script>
+<![endif]-->
+		<script type="text/javascript">
+			if('ontouchstart' in document.documentElement) document.write("<script src='assets/js/jquery.mobile.custom.min.js'>"+"<"+"/script>");
+		</script>
+		<script src="assets/js/bootstrap.min.js"></script>
+
+		<!-- page specific plugin scripts -->
+
+		<!--[if lte IE 8]>
+		  <script src="assets/js/excanvas.min.js"></script>
+		<![endif]-->
+		
+
+		<!-- inline scripts related to this page -->
+		<script type="text/javascript">
+			jQuery(function($) {
+				/**
+				$('#myTab a[data-toggle="tab"]').on('shown.bs.tab', function (e) {
+				  console.log(e.target.getAttribute("href"));
+				})
+					
+				$('#accordion').on('shown.bs.collapse', function (e) {
+					console.log($(e.target).is('#collapseTwo'))
+				});
+				*/
+				
+				$('#myTab a[data-toggle="tab"]').on('shown.bs.tab', function (e) {
+					if($(e.target).attr('href') == "#home") drawChartNow();
+				})
+				
+			
+			});
+
+
+
+
+
+
+		
+		</script>
+	</body>
+</html>

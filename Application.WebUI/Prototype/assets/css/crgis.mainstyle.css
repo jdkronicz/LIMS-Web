@@ -1,0 +1,192 @@
+body {
+	background-image: url(/ce/Application/Images/bannerbkg.gif);
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	margin-left: 0px;
+	margin-top: 0px;
+}
+form {
+	margin-top:0px;
+	margin-bottom:0px;
+}
+.secthead {
+	font-size: 14px;
+	font-weight: bold;
+	color: #000066;
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+
+}
+.goldhead {
+	font-size: 12px;
+	font-weight: bold;
+	color: #ffcc00;
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	vertical-align: middle;
+
+}
+.alerttext {
+	font-size: 14px;
+	font-weight: bold;
+	color: #FFDD53;
+	font-family: Arial, Helvetica, sans-serif;
+}
+.smallalert  {
+	font-size: 11px;
+	font-weight: bold;
+	color: #FFDD53;
+	font-family: Arial, Helvetica, sans-serif;
+}
+.largealert  {
+	font-size: 16px;
+	font-weight: bold;
+	color: #ffcc00;
+	font-family: Arial, Helvetica, sans-serif;
+}
+.redalert  {
+	font-size: 16px;
+	font-weight: bold;
+	color: #c00000;
+	font-family: Arial, Helvetica, sans-serif;
+}
+.smalltext {
+	font-size: 12px;
+	font-weight: normal;
+	color: #000066;
+	font-family: Arial, Helvetica, sans-serif;
+}
+.scaletext {
+	font-size: 11px;
+	font-weight: normal;
+	color: #ffffff;
+	font-family: Arial, Helvetica, sans-serif;
+}
+.displayInfo {
+	font-size: 11px;
+	font-weight: bold;
+	color: #ffffff;
+	font-family: Tahoma, Verdana, Arial, Helvetica, sans-serif;
+}
+a:link {
+	color: #FFFFFF;
+}
+a:hover {
+	color: #fbcd00;
+}
+a:visited {
+	color: #FFFFFF;
+}
+a.ltbkg:link, a.ltbkg:visited {
+	font-size: 12px;
+	font-weight: bold;
+	color: #006699;
+}
+
+
+.datatable {
+	font-size: 11px;
+	font-weight: bold;
+	color: #000066;
+	background-color: #FFFFFF;
+}
+.menubox {
+	font-size: 12px;
+	font-weight: bold;
+	color: #006699;
+	background-color: #FFFFFF;
+	border: thin solid #000066;
+	padding: 5px;
+}
+.tabbox {
+	border: thin solid #003366;
+	padding: 0px;
+}
+.whitetabbox {
+	border-width:1px;
+        border-style:solid;
+        border-color:#FFFFFF;
+        border-top-style:none;
+	padding:0px;
+}
+.listbox {
+	font-size: 12px;
+	font-weight: bold;
+	color: #ffffff;
+	padding: 0px;
+
+}
+.menuhead {
+	font-size: 14px;
+	font-weight: bold;
+	color: #ffffff;
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+
+}
+.menucontent {
+	font-size: 12px;
+	font-weight: bold;
+	color: #006699;
+	background-color: #FFFFFF;
+}
+.menucontentlabel {
+	font-size: 11px;
+	font-weight: bold;
+	color: #000066;
+	background-color: #FFFFFF;
+}
+button {
+	font-size: 12px;
+	font-weight: bold;
+	color: #000066;
+}
+ a.buttontext1:link, a.buttontext1:visited {
+	font-size: 12px;
+	font-weight: bold;
+	color: #ffffff;
+	text-decoration: none;
+	vertical-align: middle;
+	text-align: center;
+}
+
+ a.buttontext1:hover {
+	font-size: 12px;
+	font-weight: bold;
+	color: #ffcc00;
+	text-decoration: none;
+	vertical-align: middle;
+	text-align: center;
+}
+
+.popup{
+	background: #006699;
+	margin-left: 5px;
+	margin-top: 5px;
+	margin-right: 5px;
+	margin-bottom: 5px;
+	color: #ffffff;
+}
+.popheader{
+	margin-top: 5px;
+	font-size: 16px;
+	font-weight: bold;
+	color: #ffffff;
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+}
+.listtext{
+	font-size:12px;
+	font-weight: bold;
+	color: #ffffff;
+}
+.descriptbox
+{
+    BORDER:1px;
+	 BORDER-STYLE: groove;
+    PADDING: 1px;
+    FONT-SIZE: 9pt;
+    color: rgb(0,0,128);
+    BACKGROUND-COLOR: #FFFFFF}
+	 
+.wait {
+	font-size: 20px;
+	color:#ffcc00;
+	font-weight: bold;
+}	 

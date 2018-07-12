@@ -1,0 +1,617 @@
+/*
+Theme Name: csl custom child
+Theme URI: http://wordpress.org/extend/themes/toolbox
+Author: Automattic
+Author URI: http://automattic.com/
+Template: csl
+Description: A semantic, HTML5, canvas for CSS artists and an ultra-minimal set of super-clean templates for your own WordPress theme development.
+Version: 1.4
+License: GNU General Public License
+License URI: license.txt
+Tags: custom-menu, sticky-post, microformats, rtl-language-support, translation-ready, full-width-template, post-formats
+
+This theme, like WordPress, is licensed under the GPL.
+Use it to make something cool, have fun, and share what you've learned with others.
+*/
+
+@import url("../csl/style.css");
+
+/*    COLOR PALETTE
+	Green = #00693e
+	Purple = #1e155d
+*/
+
+* {
+	font-family:Verdana, Geneva, sans-serif;
+	/*font-size:14px;*/
+	margin:0;
+}
+
+/*    FOR STICKY FOOTER    */
+
+html, body{
+	height:100%;
+}
+.wrapper {
+	min-height: 100%;
+	height: auto !important;
+	height: 100%;
+	margin: 0 auto -230px; /* the bottom margin is the negative value of the footer's height */
+}
+.push {
+	height: 230px;  /*.push must be the same height as .footer */
+	[If IE]height:0px;
+	clear:both;
+}
+
+.footer {
+	background-image: url(images/FootBkg.png); 
+	Background-repeat:repeat-x;
+	background-color:#FFF;
+	border-top:2px #00693e solid;
+	height:230px;
+}
+
+/*    END STICKY FOOTER    */
+
+/*#logo {
+	background-image: url(images/CSLHead.png); 
+	Background-repeat:no-repeat;
+	z-index:100;
+	height:200px;
+	margin:0 auto;
+	width:960px;
+position:relative;
+}
+#logo a{
+	color:#FFF;
+	font-family:'Times New Roman', Times, serif;
+	font-size:16px;
+	font-weight:bold;
+	font-style:italic;
+	text-decoration:none;
+}
+#logo a:hover{
+	text-decoration:underline;
+}*/
+
+#logo {
+	display:block;
+	background-image: url(images/CSLHead_01.png); 
+	Background-repeat:no-repeat;
+	z-index:100;
+	height:159px;
+	width:494px;
+	margin-right:466px;
+	text-indent:-9999px;
+	position:relative;
+}
+#logo2 {
+	position:absolute;
+	right:0px;
+	top:0px;
+	/*background-image: url(images/CSLHead_02.png); 
+	Background-repeat:no-repeat;*/
+	z-index:100;
+	width:466px;
+}
+#addressbutton {
+	font-family:Verdana;Geneva;sans-serif;
+	font-size:.65em;
+	font-weight:bold;
+	color:#FFFFFF;
+	margin-left:176px;
+	margin-top:-9px;
+	position:absolute;
+	z-index:1000;
+}
+#addressbutton a{
+	color:#FFF;	
+	text-decoration:none;
+}
+#addressbutton a:hover{
+	text-decoration:underline;
+}
+
+body {
+	background-image:url(images/HeadBkg.png);
+	Background-repeat:repeat-x;
+	background-color:#FFF;
+	margin:0;
+	height:100%;
+}
+
+#jview {
+	display:none;	
+}
+
+#page {
+	display: block;
+	margin: 0 auto;
+	width:960px;
+	background-color:#FFF;
+}
+/*MAIN NAV BAR BACKGROUND*/
+#access {	
+	font-size:12px;
+	background: #00693e;
+	display: block;
+	float: left;
+	margin: -17px auto 24px;
+	width: 100%;
+	border:2px solid #1E155D;
+	box-shadow: 3px 6px 12px rgba(0,0,0,0.6);
+	-moz-box-shadow: 3px 6px 12px rgba(0,0,0,0.6);
+	-webkit-box-shadow: 3px 6px 12px rgba(0,0,0,0.6);
+}
+#access a{
+	color:#FFF;
+	font-weight:bold;
+	display:block;
+	line-height:2em;
+}
+#access ul ul {
+	box-shadow: 0 3px 3px rgba(0,0,0,1);
+	-moz-box-shadow: 0 3px 3px rgba(0,0,0,1);
+	-webkit-box-shadow: 0 3px 3px rgba(0,0,0,1);
+	display: none;
+	float: left;
+	position: absolute;
+	top: 2em;
+	left: 0;
+	/*z-index: 99999;*/
+}
+#access ul ul a {
+	background: #8e8ac3;    /*BACKGROUND FOR DROP DOWNS*/
+	line-height: 1em;
+	padding: .5em .5em .5em 1em;
+	width: 18em;
+	height: auto;
+}
+/*NAV BAR BACKGROUND WHEN HOVERING OVER LINK*/
+#access li:hover > a,
+#access ul ul :hover > a {
+	background: #1e155d;
+}
+#access ul ul a:hover {
+	background: #1e155d;
+}
+#access ul li:hover > ul {
+	display: block;
+}
+#content {
+	margin: 0px 280px 18px 18px;
+}
+/*********************************SETS FOOTER COLUMN WIDTHS*****************************/
+ul.xoxo {
+	margin-top:18px;
+	float:left;
+	width:200px;
+	list-style:none;
+	}
+ul.xoxo2 {
+	margin-top:18px;
+	float:left;
+	width:200px;
+	list-style:none;
+	}
+ul.xoxo3  {
+	margin-top:18px;
+	float:left;
+	width:200px;
+	list-style:none;
+}
+#menu-footer {
+	font-size:10px;
+	list-style-image:none;
+}
+/********************************END SPECIAL FOOTER COLUNMN WIDTHS***************************/
+
+/********************************BEGIN FOOTER MENU COLUMN 1***************************/
+ul.xoxo li ul li {
+	font-size:12px;
+	font-weight:bold;
+	list-style:none;
+	margin-left:-24px;
+}
+ul.xoxo li ul li a {
+	text-decoration:none;
+	color:#1e155d;
+}
+ul.xoxo li ul li a:hover {
+	color:#00693e;
+}
+/********************************END FOOTER MENU COLUMN 1***************************/
+
+
+/********************************SETS FOOTER COLUMN TITLES***************************/
+
+ul.xoxo h3.widget-title, ul.xoxo2 h3.widget-title, ul.xoxo3 h3.widget-title {
+	color:#fff;
+	font-size:14px;
+	line-height:24px;
+	border-bottom:2px solid #00693e;
+	margin-bottom:9px;
+	font-family:Rockwell, 'Courier New', Courier, Verdana, Geneva, sans-serif;
+}
+
+/********************************END  FOOTER COLUMN TITLES***************************/
+
+h1.widget-title2 {
+	margin-bottom:12px;
+	margin-top:18px;
+	color:#00693e;
+	font-size:18px;
+}
+.widget-sidebar1 {
+	text-align:left;
+}
+.widget-sidebar2 {
+	margin-top:24px;
+	margin-bottom:24px;
+}
+.widget-dynamic-content {
+	margin-bottom:24px;
+}
+/* =Forms
+-------------------------------------------------------------- */
+
+##searchform {
+	background: #eee;
+	display: block;
+	padding: 1em;
+}
+searchform label {
+	display: none;
+}
+#searchform input#s {
+	width: 80%;
+}
+input[type=text],
+input#s {
+	margin: 0 1em 0 0;
+	width: 60%;
+}
+textarea {
+	width: 80%;
+}
+#searchform .shadow {
+	-moz-box-shadow:    inset -1px 1px 6px #1e155d;
+	-webkit-box-shadow: inset -1px 1px 6px #1e155d;
+	box-shadow:         inset -1px 1px 6px #1e155d;
+	background:#FFF;
+}
+a.linksofinterest {
+	font-size:12px;
+	color:#1e155d;
+	text-decoration:underline;
+}
+a:hover.linksofinterest {
+	color:#00693e;
+	text-decoration:none;
+}
+
+/*  **********************  SMOOTH SLIDER CUSTOM CSS ******************  */
+
+.smooth_slider{width:450px;height:400px;background-color:#ffffff;border:0px solid #999999;margin-left:125px;}
+.smooth_slider .sldr_title{font-family:Arial,Helvetica,sans-serif, Arial, Helvetica, sans-serif;font-size:20px;font-weight:bold;font-style:normal;color:#000000;}
+.smooth_slider .smooth_slideri{width:402px;margin:0px 24px 0px 24px;}
+.smooth_slider .smooth_slider_thumbnail{float:left;margin:0 0px 0 0px;max-height:252px;border:0px solid #000000;}
+.smooth_slider .smooth_slideri h2{clear:none;line-height:17px;font-family:Arial,Helvetica,sans-serif;font-size:14px;font-weight:bold;font-style:normal;color:#1e155d;margin:0 0 5px 0;}
+.smooth_slider .smooth_slideri h2 a{color:#1e155d;font-size:14px;font-weight:bold;font-style:normal;}
+.smooth_slider .smooth_slideri span{font-family:Arial,Helvetica,sans-serif;font-size:12px;font-weight:normal;font-style:normal;color:#333333;}
+.smooth_slider .smooth_slideri p.more{color:#00693e;font-family:Arial,Helvetica,sans-serif;font-size:12px;}
+.smooth_slider .smooth_next{}
+.smooth_slider .smooth_prev{} 
+
+/*  *************************  END SMOOTH SLIDER **************************/
+
+/*  ************************** HOME PAGE SIDE BAR LINKS *******************/
+#CertificationLinks a {
+	font-size:10px;
+	color:#00693e;
+	text-decoration:underline;
+	font-weight:bold;
+text-indent:-1em;
+margin-left:1em;
+margin-top:0;
+display:block;
+}
+#CertificationLinks a:hover {
+	color:#1e155d;
+	text-decoration:none;
+}
+#CertificationLinks p {
+margin-bottom:6px;
+}
+h1.entry-title {
+	font-size:30px;
+	margin-bottom:12px;
+	color:#1e155d;
+	Font-family:Rockwell, 'Courier New', Courier, Verdana, Geneva, sans-serif;
+}
+
+.newsletter:link {
+	color:#00693e;
+	text-decoration:underline;
+}
+.newsletter:hover {
+	color:#1e155d;
+	text-decoration:none;
+}
+/*******************  END HOME PAGE SIDE BAR LINKS  *****************/
+
+/****************  HOME PAGE CSL APPLICATION LINKS   **************/
+#applications a {
+font-size:12px;
+color:#00693e;
+border-left: 1px solid #1e155d;
+font-weight:bold;
+font-style:italic;
+padding-left:6px;
+padding-right:1px;
+}
+#applications a:hover {
+color:#1e155d;
+text-decoration:underline;
+}
+
+
+
+
+
+
+h1.entry-home, h1.entry-home a {
+	font-size:20px;
+	margin-bottom:12px;
+	margin-left:0px;
+	color:#1e155d;
+	text-decoration:none;
+	font-family:Rockwell, 'Courier New', Courier, Verdana, Geneva, sans-serif;
+}
+h1.entry-home a:hover {
+	color:#00693e;
+}
+.entry-content h1, .entry-content h1 a {
+	font-size:20px;
+	margin-bottom:12px;
+	margin-left:12px;
+	color:#00693e;
+	text-decoration:none;
+	font-family: Rockwell, 'Courier New', Courier, Verdana, Geneva, sans-serif;
+}
+.entry-content h1 a:hover {
+	color:#00693e;
+}
+.entry-content h2 {
+	font-family: Rockwell, 'Courier New', Courier, Verdana, Geneva, sans-serif;
+	color:#00693e;
+	font-size:20px;
+	margin-bottom:12px;
+	margin-left:12px;
+}
+.entry-content p {
+	margin-left:36px;
+	margin-bottom:12px;
+	font-size:14px;
+}
+.entry-content p a {
+	text-decoration:underline;
+	color:#1e155d;
+	font-size:14px;
+}
+.entry-content p a:hover {
+	text-decoration:none;
+	color:#00693e;
+}
+.entry-content ul, ol {
+	margin-left:24px;
+	margin-bottom:12px;
+	font-size:14px;
+}
+.entry-content ul ul {
+	margin-left:0px;
+}
+.entry-content li a {
+	text-decoration:underline;
+	color:#1e155d;
+}
+.entry-content li a:hover {
+	text-decoration:none;
+	color:#00693e;
+}
+h1.widget-title {
+	color:#00693e;
+	font-size:18px;
+	font-family:Rockwell, 'Courier New', Courier, Verdana, Geneva, sans-serif;
+}
+
+
+/*******************************BEGIN TOOLTIPS **************************/
+
+/* HACK FOR IE: to make sure the tooltips show above form controls, we underlay each tooltip with an iframe */
+.iframeTooltip
+{
+	position: absolute;
+	z-index: 1010;
+	filter:alpha(opacity:0.1);
+}
+#sprytrigger {
+	position:absolute;
+	width:415px;
+	height:17px;
+}
+#sprytrigger.Mo {
+	top:13.4em;
+	left:12.5em;
+	width:2.2em;
+	height:2.5em;
+}
+#sprytrigger.Be {
+	top:5.4em;
+	left:3em;
+	width:2.2em;
+	height:2.5em;
+}
+#sprytrigger.Cr {
+	top:10.7em;
+	left:12.5em;
+	width:2.2em;
+	height:2.5em;
+}
+#sprytrigger.As{
+	top:10.7em;
+	left:34em;
+	width:2.2em;
+	height:2.5em;
+}
+#sprytooltip1, #sprytooltip7 {
+	width:9.5em;
+	height:3em;
+	background-color:#c3d1a2;
+	border:thin black solid;
+	zoom: 1;
+	filter: alpha(opacity=90);
+	opacity: 0.9;
+}
+#sprytooltip2, #sprytooltip8 {
+	width:9.5em;
+	height:4em;
+	background-color:#c3bded;
+	border:thin black solid;
+	zoom: 1;
+	filter: alpha(opacity=90);
+	opacity: 0.9;
+}
+#sprytooltip3, #sprytooltip6 {
+	width:9.5em;
+	height:6.75em;
+	background-image:url('images/ElementBkg.jpg');
+	border:thin black solid;
+	zoom: 1;
+	filter: alpha(opacity=90);
+	opacity: 0.9;
+}
+#sprytooltip4 {
+	width:9.5em;
+	height:8.5em;
+	background-image:url('images/ElementBig4Bkg.jpg');
+	border:thin black solid;
+	zoom: 1;
+	filter: alpha(opacity=90);
+	opacity: 0.9;
+}
+#sprytooltip9 {
+	width:9.5em;
+	height:3em;
+	background-color:#fff;
+	border:thin black solid;
+	zoom: 1;
+	filter: alpha(opacity=90);
+	opacity: 0.9;
+}
+#sprytooltip10 {
+	width:9.5em;
+	height:3em;
+	background-color:#ffffff;
+	border:4px #0FF solid;
+	zoom: 1;
+	filter: alpha(opacity=90);
+	opacity: 0.9;
+}
+.tooltipContent h1 {
+	Color:#1e155d;
+	font-family: Verdana,Geneva,sans-serif;
+	font-size:.75em;
+	line-height:1.2em;
+	font-weight:bold;
+	text-align:center;
+	font-decoration:none;
+	margin: .75em;
+	/*zoom: 1;
+	filter: alpha(opacity=100);
+	opacity: 1.0;*/
+}
+.tooltipContent h1 a {
+	color:#1e155d;
+	text-decoration:underline;
+}
+.tooltipContent h1 a:hover {
+	color:#00693e;
+	text-decoration:none;
+}
+
+.tooltipContent p {
+	font-size:.8em;
+	margin:0 1em 1em 1em;
+	color:black;
+	font-weight:bold;
+	text-decoration:none;
+	/*zoom: 1;
+	filter: alpha(opacity=100);
+	opacity: 1.0;*/
+}
+#test {
+	/*background-image:url('images/PeriodicTable.jpg');*/
+	width:702px;
+	height:447px;
+	position:absolute;
+	top:0;
+	left:0;
+}
+
+/*.tooltipContent
+{
+	background-color: #FFFFCC;
+}*/
+
+#key a {
+	color:#1e155d;
+	text-decoration:underline;
+	font-family:Arial, sans-serif;
+}
+#key a:hover {
+	color:#00693e;
+	text-decoration:none;
+	font-family:Arial, Geneva, sans-serif;
+}
+
+#testimonials{
+	font-size:12px;
+	margin: 12px 0;
+}
+
+#glossary {
+	position:absolute;
+	width:10px;
+	height:10px;
+	z-index:1;
+	top:750px;
+	left:0px;
+	overflow:hidden;
+}
+/****************** READ ME LINKS on HOME PAGE **************************/
+#readmore {
+	position:relative;
+	margin:-6px 0 12px 36px;
+}
+
+#readmore a{
+	color:#1e155d;
+	text-decoration:underline;
+	font-weight:bold;
+	font-size:13px;
+}
+#readmore a:hover {
+	color:#00693e;
+	text-decoration:none;
+}
+
+/****************** MAILCHIMP Adjustments **************************/
+#mc_signup_form .mc_var_label {
+	font-size:12px;
+	color:#000000;
+}
+#mc-indicates-required, #mc_display_rewards{
+	font-size:12px;
+}

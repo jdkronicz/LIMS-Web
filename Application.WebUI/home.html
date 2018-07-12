@@ -1,0 +1,377 @@
+﻿<!DOCTYPE html>
+<html lang="en" data-ng-app="AngularAuthApp">
+<head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta charset="utf-8" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
+
+    <!-- bootstrap & fontawesome -->
+    <link rel="stylesheet" href="content/assets/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="content/assets/css/font-awesome.css" />
+
+    <!-- page specific plugin styles -->
+    <link rel="stylesheet" href="content/assets/css/jquery-ui.custom.min.css" />
+    <link rel="stylesheet" href="content/assets/css/jquery.gritter.css" />
+    <link href="content/css/toaster.css" rel="stylesheet" />
+    <link href="Content/css/datepicker.css" rel="stylesheet" />
+    <link href="Content/css/bootstrap-timepicker.css" rel="stylesheet" />
+
+    <!-- ace styles -->
+    <link rel="stylesheet" href="content/assets/css/ace.min.css" id="main-ace-style" />
+    <!--[if lte IE 9]>
+            <link rel="stylesheet" href="assets/css/ace-part2.min.css" />
+        <![endif]-->
+    <!--[if lte IE 9]>
+          <link rel="stylesheet" href="assets/css/ace-ie.min.css" />
+        <![endif]-->
+    <!-- inline styles related to this page -->
+    <style>
+        @font-face {
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-weight: 300;
+  src: local('Open Sans Light'), local('OpenSans-Light'), url(http://fonts.gstatic.com/s/opensans/v13/DXI1ORHCpsQm3Vp6mXoaTXhCUOGz7vYGh680lGh-uXM.woff) format('woff');
+}
+@font-face {
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Open Sans'), local('OpenSans'), url(http://fonts.gstatic.com/s/opensans/v13/cJZKeOuBrn4kERxqtaUH3T8E0i7KZn-EPnyo3HZu7kw.woff) format('woff');
+}
+@font-face {
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-weight: 700;
+  src: local('Open Sans Bold'), local('OpenSans-Bold'), url(http://fonts.gstatic.com/s/opensans/v13/k3k702ZOKiLJc3WVjuplzHhCUOGz7vYGh680lGh-uXM.woff) format('woff');
+}
+@font-face {
+  font-family: 'Open Sans';
+  font-style: italic;
+  font-weight: 400;
+  src: local('Open Sans Italic'), local('OpenSans-Italic'), url(http://fonts.gstatic.com/s/opensans/v13/xjAJXh38I15wypJXxuGMBobN6UDyHWBl620a-IRfuBk.woff) format('woff');
+}
+@font-face {
+  font-family: 'Open Sans';
+  font-style: italic;
+  font-weight: 700;
+  src: local('Open Sans Bold Italic'), local('OpenSans-BoldItalic'), url(http://fonts.gstatic.com/s/opensans/v13/PRmiXeptR36kaC0GEAetxjqR_3kx9_hJXbbyU8S6IN0.woff) format('woff');
+}
+        /* some elements used in demo only */
+        .spinner-preview {
+            width: 100px;
+            height: 100px;
+            text-align: center;
+            margin-top: 60px;
+        }
+
+        .dropdown-preview {
+            margin: 0 5px;
+            display: inline-block;
+        }
+
+            .dropdown-preview > .dropdown-menu {
+                display: block;
+                position: static;
+                margin-bottom: 5px;
+            }
+
+        h1 a .wrapper {
+            display: block;
+            position: relative;
+            padding-left: 21px;
+            text-align: end;
+        }
+
+        a .wrapper .main {
+            text-transform: uppercase;
+            letter-spacing: -0.025em;
+            color: rgb(238, 24, 32);
+            display: inline-block;
+            font: 700 31px/21px Asap, sans-serif;
+        }
+
+        a .wrapper .divider {
+            display: inline-block;
+            position: relative;
+            left: 6px;
+            top: -2px;
+            width: 1px;
+            height: 21px;
+            background: rgb(84, 178, 219);
+        }
+
+
+        a .wrapper .second {
+            position: relative;
+            display: inline-block;
+            letter-spacing: -0.025em;
+            color: rgb(87, 185, 190);
+            left: 6px;
+            top: -2px;
+            font: 700 17px/17px Asap, sans-serif;
+        }
+
+        .morris-hover {
+            position: absolute;
+            z-index: 1000;
+        }
+
+            .morris-hover.morris-default-style {
+                border-radius: 10px;
+                padding: 6px;
+                color: #666;
+                background: rgba(255, 255, 255, 0.8);
+                border: solid 2px rgba(230, 230, 230, 0.8);
+                font-family: sans-serif;
+                font-size: 12px;
+                text-align: center;
+            }
+
+                .morris-hover.morris-default-style .morris-hover-row-label {
+                    font-weight: bold;
+                    margin: 0.25em 0;
+                }
+
+                .morris-hover.morris-default-style .morris-hover-point {
+                    white-space: nowrap;
+                    margin: 0.1em 0;
+                }
+
+        h3 {
+            white-space: nowrap;
+            display: inline;
+            /* align vertical */
+        }
+
+        h4 {
+            white-space: nowrap;
+            display: inline;
+            /* align vertical */
+        }
+
+        h2 {
+            white-space: nowrap;
+            display: inline;
+            /* align vertical */
+        }
+    </style>
+
+    <!-- ace settings handler -->
+    <script src="assets/js/ace-extra.min.js"></script>
+
+    <!-- HTML5shiv and Respond.js for IE8 to support HTML5 elements and media queries -->
+    <!--[if lte IE 8]>
+        <script src="assets/js/html5shiv.js"></script>
+        <script src="assets/js/respond.js"></script>
+        <![endif]-->
+</head>
+
+<body class="no-skin glossed">
+    <!-- Fixed navbar -->
+    <header>
+
+
+        <div class="" style="vertical-align: middle;">
+            <div class="banner-logo">
+
+
+                <a href="index.html">
+                    <img src="CSL_Logo.png" alt="">
+                </a>
+
+                <span style="margin-left: 450px">
+                    <h2 ><span style="color:#006c44"><b>CSL Web Portal</b></span></h2>
+                </span>
+
+            </div>
+
+
+            <div class="clearfix"></div>
+
+            <!-- Topbar - Keep code for future use -->
+            <!-- Main Navigation Bar -->
+            <nav class="navbar navbar-default" role="navigation" data-ng-controller="indexController">
+                <div class="container-fluid">
+
+                    <!-- Brand and toggle get grouped for better mobile display -->
+                    <div class="navbar-header">
+                        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#crgis_collapse">
+                            <span class="sr-only">Toggle navigation</span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </button>
+
+                    </div>
+
+                    <!-- Collect the nav links, forms, and other content for toggling -->
+                    <div class="collapse navbar-collapse" id="crgis_collapse">
+
+                        <ul class="nav navbar-nav navbar-right">
+
+
+                            <!-- Work In Process -->
+                            <li data-ng-hide="!authentication.isAuth"><a id="menu-about" href="#/home">Sample Report</a></li>
+
+                            <!-- Work In Process -->
+                            <li data-ng-hide="!authentication.isAuth"><a id="menu-about"  href="#/wip">Work In Process </a></li>
+
+
+                            <!-- Sign-In -->
+
+
+                            <li class="dropdown profile_menu" data-ng-hide="!authentication.isAuth">
+                                <a href class="dropdown-toggle" data-toggle="dropdown"><b class="fa fa-user bigger-120"></b> {{authentication.userName}} <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    <li><a href="#/changePassword">Change Password</a></li>
+                                    <li><a href data-ng-click="logOut()">Sign Out</a></li>
+                                </ul>
+                            </li>
+                            <!-- Work In Process -->
+                            <li data-ng-hide="!authentication.isAuth"> <select name="dynamic-table_length" data-ng-model="customer" data-ng-change="customerChange()" class="form-control col-xs-2" data-ng-options="cust.custShortName for cust in customers  track by cust.custID"></select></li>
+
+
+                        </ul>
+                    </div>
+                    <!-- /.navbar-collapse -->
+                </div>
+                <!-- /.container-fluid -->
+            </nav>
+
+        </div>
+    </header>
+
+
+    <div class="main-container" id="main-container">
+
+        <!--	<div id="sidebar" class="sidebar                  responsive">
+
+
+
+
+
+            </div>-->
+
+        <!-- /.main-content -->
+
+
+            <div data-ng-view="">
+            </div>
+       
+
+    </div>
+    <!-- /.main-container -->
+    <!-- basic scripts -->
+    <!--[if IE]>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <![endif]-->
+    <!--[if !IE]> -->
+    <script type="text/javascript">
+        window.jQuery || document.write("<script src='content/assets/js/jquery-1.11.1.min.js'>" + "<" + "/script>");
+    </script>
+
+    <!-- <![endif]-->
+    <!--[if IE]>
+    <script type="text/javascript">
+     window.jQuery || document.write("<script src='assets/js/jquery1x.min.js'>"+"<"+"/script>");
+    </script>
+    <![endif]-->
+    <!--<script type="text/javascript">
+        if ('ontouchstart' in document.documentElement) document.write("<script src='content/assets/js/jquery.mobile.custom.min.js'>" + "<" + "/script>");
+    </script>-->
+    <script src="content/assets/js/bootstrap.min.js"></script>
+
+    <!-- page specific plugin scripts -->
+    <!--[if lte IE 8]>
+          <script src="assets/js/excanvas.min.js"></script>
+        <![endif]-->
+    <script src="content/assets/js/daterangepicker.min.js"></script>
+    <script src="scripts/raphael-min.js"></script>
+    <script src="scripts/morris-0.4.1.min.js"></script>
+    <!-- inline scripts related to this page -->
+   
+    
+    <!-- 3rd party libraries -->
+    <!--<script src="scripts/angular.min.js"></script>-->
+  
+    <script src="scripts/angular/1.3.15/angular.min.js"></script>
+    <script src="scripts/angular/angular-ui/0.2.13/angular-ui-router.min.js"></script>
+    <script src="scripts/angular-route.min.js"></script>
+
+    <script src="//angular-ui.github.io/bootstrap/ui-bootstrap-tpls-0.13.0.js"></script>
+    <!--  <script src="scripts/wcOverlay.js"></script>
+   include the js 
+    <script src="Scripts/moment.js"></script>
+-->
+    <script src="Scripts/bootstrap-datepicker.js"></script>
+    <script src="Scripts/bootstrap-datetimepicker.min.js"></script>
+   
+    <script src="scripts/angular/angular-toastr/1.4.1/angular-toastr.tpls.min.js"></script>
+    <script src="scripts/angular-local-storage.min.js"></script>
+    <script src="scripts/loading-bar.min.js"></script>
+    <!-- Load app main script -->
+    <script src="app/app.js?v=2"></script>
+    <!-- Load services -->
+    <script src="app/services/authInterceptorService.js?v=2"></script>
+    <script src="app/services/authService.js?v=2"></script>
+    <script src="app/services/contactService.js?v=2"></script>
+    <script src="app/services/samplesService.js?v=2"></script>
+    <script src="app/services/reportService.js?v=2"></script>
+
+    <script src="app/services/tokensManagerService.js?v=2"></script>
+    <!-- Load controllers -->
+    <script src="app/controllers/indexController.js?v=2"></script>
+    <script src="app/controllers/homeController.js?v=2"></script>
+    <script src="app/controllers/loginController.js?v=2"></script>
+    <script src="app/controllers/signupController.js?v=2"></script>
+    <script src="app/controllers/changePasswordController.js?v=2"></script>
+    
+    <script src="app/controllers/ordersController.js?v=2"></script>
+    <script src="app/controllers/workinProgressController.js?v=2"></script>
+    <script src="app/controllers/refreshController.js?v=2"></script>
+    <script src="app/controllers/tokensManagerController.js?v=2"></script>
+    <script src="app/controllers/associateController.js?v=2"></script>
+
+    <script type="text/javascript">
+
+
+        ////datepicker plugin
+        ////link
+        //$('.date-picker').datepicker({
+        //    autoclose: true,
+        //    todayHighlight: true
+        //})
+        ////show datepicker when clicking on the icon
+        //.next().on(ace.click_event, function () {
+        //    $(this).prev().focus();
+        //});
+
+        ////or change it into a date range picker
+        //$('.input-daterange').datepicker({ autoclose: true });
+
+
+        ////to translate the daterange picker, please copy the "examples/daterange-fr.js" contents here before initialization
+        //$('input[name=date-range-picker]').daterangepicker({
+        //    'applyClass': 'btn-sm btn-success',
+        //    'cancelClass': 'btn-sm btn-default',
+        //    locale: {
+        //        applyLabel: 'Apply',
+        //        cancelLabel: 'Cancel',
+        //    }
+        //})
+        //.prev().on(ace.click_event, function () {
+        //    $(this).next().focus();
+        //});
+
+
+
+
+
+    </script>
+    <!-- Load custom filters -->
+    <!-- Load custom directives -->
+</body>
+
+
+</html>
